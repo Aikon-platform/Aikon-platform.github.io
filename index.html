@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Aikon: Studying Scientific Representations in Diachronic Corpora">
+  <link rel="icon" type="image/png" href="favicon.png" />
   <title>Aikon Project</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
@@ -13,28 +14,20 @@
       --header-color: #ffffff;
     }
     
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color);
-      color: var(--bulma-text);
-      line-height: 1.6;
-    }
-
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    
-    .container {
-      width: 90%;
+    .contained {
+      width: 70%;
       max-width: 1200px;
       margin: 2rem auto;
       padding: 2rem;
       background-color: white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
+      border-radius: 1em;
+      color: var(--bulma-text);
+    }
+
+    h1 {
+      font-size: 4em !important;
+      text-align: center;
     }
     
     h2 {
@@ -48,7 +41,7 @@
       margin-bottom: 1.5rem;
     }
     
-    img {
+    .image {
       max-width: 100%;
       height: auto;
       margin: 1.5rem 0;
@@ -57,7 +50,7 @@
       transition: transform 0.3s ease;
     }
     
-    img:hover {
+    .image:hover {
       transform: scale(1.02);
     }
     
@@ -90,6 +83,9 @@
       left: 0;
       color: var(--bulma-success);
     }
+    .content ul {
+      list-style: none !important;
+    }
     
     .project-list {
       display: flex;
@@ -116,7 +112,7 @@
       text-align: center;
       margin-top: 2rem;
       padding: 1rem 0;
-      background-color: var(--bulma-link);
+      background-color: var(--bulma-text);
       color: var(--header-color);
     }
     
@@ -127,63 +123,80 @@
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
 
-<div class="container" style="padding: 2em; margin: 2em;" data-theme="light">
-  <section>
-    <h1 class="title">Aikon</h1>
+  <section class="section">
+    <div class="contained container content">
+      <h1 class="title pl-6">
+        <img src="favicon.png" alt="Aikon logo" style="height:55px; width: 55px;">
+        Aikon
+      </h1>
 
-    <h2 class="title">About Aikon</h2>
-    <p>Aikon is a modular platform 
-      designed to empower humanities scholars in leveraging artificial intelligence and computer vision methods for analyzing large-scale heritage collections. It offers a user-friendly interface for visualizing, extracting, and analyzing illustrations from historical documents, fostering interdisciplinary collaboration and sustainability across digital humanities projects. Built on proven technologies and interoperable formats, Aikon's adaptable architecture supports projects involving visual materials. It fosters interdisciplinary collaboration, resource sharing, and sustainability across digital humanities projects.</p>
+      <blockquote class="px-6 mx-6">
+        Aikon is a modular platform designed to empower humanities scholars in leveraging artificial intelligence and computer vision methods for analyzing large-scale heritage collections. It offers a user-friendly interface for visualizing, extracting, and analyzing illustrations from historical documents, fostering interdisciplinary collaboration and sustainability across digital humanities projects. Built on proven technologies and interoperable formats, Aikon's adaptable architecture supports projects involving visual materials.
+      </blockquote>
+
+      <p class="buttons is-centered pt-3">
+        <a class="button is-medium" href="https://github.com/Aikon-platform/aikon" target="_blank">
+          <span class="icon">
+            <i class="fab fa-github"></i>
+          </span>
+          <span>GitHub</span>
+        </a>
+        <a class="button is-medium" href="https://github.com/Aikon-platform/aikon" target="_blank">
+          <span class="icon">
+            <i class="fa fa-book"></i>
+          </span>
+          <span>Article</span>
+        </a>
+      </p>
+
+      <section>
+        <h2 class="title">Overview</h2>
+        <img class="image" src="aikon-architecture.png" alt="Aikon architecture">
+      </section>
+
+      <section>
+        <h2 class="title">Key Features</h2>
+        <ul class="feature-list">
+          <li>Description and visualization of historical sources</li>
+          <li>Custom AI models trained for heritage documents</li>
+          <li>Automatic results exploration and edition</li>
+          <li>Modular architecture for diverse research purposes</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="title">Collaborating Projects</h2>
+        <div class="project-list">
+          <div class="project-item">
+            <h3>VHS</h3>
+            <p>Computer Vision and Historical Analysis of Scientific Illustration Circulation</p>
+            <a class="tag is-link" href="https://anr.fr/Projet-ANR-21-CE38-0008">ANR-21-CE38-0008</a>
+          </div>
+          <div class="project-item">
+            <h3>EiDA</h3>
+            <p>EdIter et analyser les Diagrammes astronomiques historiques avec l'intelligence Artificielle</p>
+            <a class="tag is-link" href="https://anr.fr/Projet-ANR-22-CE38-0014">ANR-22-CE38-0014</a>
+          </div>
+          <div class="project-item">
+            <h3>DISCOVER</h3>
+            <p>Discovering and Analyzing Visual Structures</p>
+            <a class="tag is-link" href="https://cordis.europa.eu/project/id/101076028">ERC-101076028</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="title">Platform Interface</h2>
+        <img class="image" src="aikon-platform.png" alt="Aikon platform">
+      </section>
+
+      <section>
+        <h2 class="title">Get Involved</h2>
+        <p>Explore the Aikon project and contribute to its development on <a href="https://github.com/Aikon-platform/aikon" target="_blank">GitHub <i class="fab fa-github"></i></a>.</p>
+      </section>
+    </div>
   </section>
-
-  <section>
-    <h2 class="title">Overview</h2>
-    <img src="aikon-architecture.png" alt="Aikon architecture">
-  </section>
-
-   <section>
-      <h2 class="title">Key Features</h2>
-      <ul class="feature-list">
-        <li>Description and visualization of historical sources</li>
-        <li>Custom AI models trained for heritage documents</li>
-        <li>Automatic results exploration and edition</li>
-        <li>Modular architecture for diverse research purposes</li>
-      </ul>
-    </section>
-    
-    <section>
-      <h2 class="title">Collaborating Projects</h2>
-      <div class="project-list">
-        <div class="project-item">
-          <h3>VHS</h3>
-          <p>Computer Vision and Historical Analysis of Scientific Illustration Circulation (ANR-21-CE38-0008)</p>
-        </div>
-        <div class="project-item">
-          <h3>EiDA</h3>
-          <p>EdIter et analyser les Diagrammes astronomiques historiques avec l'intelligence Artificielle (ANR-22-CE38-0014)</p>
-        </div>
-        <div class="project-item">
-          <h3>DISCOVER</h3>
-          <p>Discovering and Analyzing Visual Structures (ERC-101076028)</p>
-        </div>
-      </div>
-    </section>
-    
-    <section>
-      <h2 class="title">Platform Interface</h2>
-      <img src="aikon-platform.png" alt="Aikon platform">
-    </section>
-    
-    <section>
-      <h2 class="title">Get Involved</h2>
-      <p>Explore the Aikon project and contribute to its development on <a href="https://github.com/Aikon-platform/Aikon" target="_blank">GitHub <i class="fab fa-github"></i></a>.</p>
-    </section>
-  </div>
-  
-  <footer>
-    <p>&copy; 2024 Aikon Project. All Rights Reserved.</p>
-  </footer>
 </body>
 </html>
