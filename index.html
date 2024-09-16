@@ -1,206 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" webcrx="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aikon: Studying Scientific Representations in Diachronic Corpora">
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <title>Aikon Project</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-  <style>
-    :root {
-      --background-color: #f8f9fa;
-      --header-color: #ffffff;
-    }
-    
-    .contained {
-      width: 70%;
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: white;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-      border-radius: 1em;
-      color: var(--bulma-text);
-    }
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AIKON: a computer vision platform for the Digital Humanities</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        .code,
+        code {
+            border-radius: 3px;
+            padding: 0 5vw;
+            font-size: 85%;
+            tab-size: 2;
+            color: #6b6b6b;
+        }
 
-    h1 {
-      font-size: 4em !important;
-      text-align: center;
-    }
-    
-    h2 {
-      color: var(--bulma-link);
-      border-bottom: 2px solid var(--bulma-link);
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
-    }
-    
-    p, ul {
-      margin-bottom: 1.5rem;
-    }
-    
-    .image {
-      max-width: 100%;
-      height: auto;
-      margin: 1.5rem 0;
-      transition: transform 0.3s ease;
-    }
-    
-    .image:hover {
-      transform: scale(1.02);
-    }
-    
-    a {
-      color: var(--bulma-link);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    a:hover {
-      color: var(--bulma-link);
-    }
-    
-    .feature-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    
-    .feature-list li {
-      margin-bottom: 1rem;
-      padding-left: 2rem;
-      position: relative;
-    }
-    
-    .feature-list li::before {
-      content: "\f00c";
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      position: absolute;
-      left: 0;
-      color: var(--bulma-success);
-    }
-    .content ul {
-      list-style: none !important;
-    }
-    
-    .project-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: space-around;
-    }
-    
-    .project-item {
-      background-color: #f1f3f4;
-      padding: 1rem;
-      border-radius: 8px;
-      width: calc(33% - 1rem);
-      min-width: 250px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-    
-    .project-item:hover {
-      transform: translateY(-3px);
-    }
-    
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding: 1rem 0;
-      background-color: var(--bulma-text);
-      color: var(--header-color);
-    }
-    
-    @media (max-width: 768px) {
-      .project-item {
-        width: 100%;
-      }
-    }
-  </style>
+        pre {
+            white-space: pre-wrap;
+            background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 10px 5px !important;
+            padding: 10px;
+        }
+
+        .reference {
+            padding-left: 15vw;
+            padding-right: 15vw;
+            text-align: center;
+            line-height: 0.9;
+        }
+        .authors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 0.9rem;
+        }
+        .affiliations {
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 1em;
+        }
+
+        .container h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-around;
+        }
+        .project-item {
+            background-color: #f1f3f4;
+            padding: 1rem;
+            border-radius: 8px;
+            width: calc(33% - 1rem);
+            min-width: 250px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .project-item {
+                width: 100%;
+            }
+        }
+        .feature-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: 'Font Awesome 5 Free', serif;
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--bulma-success);
+        }
+        .content ul {
+            list-style: none !important;
+        }
+    </style>
 </head>
+
 <body data-theme="light">
+<div class="container">
+    <h1 class="title is-2 py-3 px-4">
+        <img src="favicon.png" alt="Aikon logo" style="height:30px; width: 30px; display: inline">
+        AIKON: a computer vision platform for the Digital Humanities
+    </h1>
 
-  <section class="section">
-    <div class="contained container content">
-      <h1 class="title pl-6">
-        <img src="favicon.png" alt="Aikon logo" style="height:55px; width: 55px;">
-        Aikon
-      </h1>
+    <div class="reference">
+        <div class="authors">
+            <p>
+                Ségolène Albouy<sup>1</sup>,
+                Jade Norindr<sup>2</sup>,
+                Fouad Aouinti<sup>3</sup>,
+                Clara Grometto<sup>1</sup>,
+                Robin Champenois<sup>1</sup>,
+                Alexandre Guilbaud<sup>3</sup>,
+                Stavros Lazaris<sup>4</sup>,
+                Matthieu Husson<sup>2</sup>,
+                Mathieu Aubry<sup>1</sup>
+            </p>
+        </div>
+        <div class="affiliations">
+            <sup>1</sup>LIGM - Imagine team, École des Ponts, Univ Gustave Eiffel, CNRS, Marne-la-Vallée, France<br>
+            <sup>2</sup>SYRTE, Observatoire de Paris-PSL, CNRS, Paris, France<br>
+            <sup>3</sup>ISCD, Institut de mathématique de Jussieu, Sorbonne Université, Paris, France<br>
+            <sup>4</sup>Orient & Méditerranée - UMR 8167, Collège de France, EPHE, Sorbonne Université, Paris,
+            France<br>
+        </div>
+    </div>
 
-      <blockquote class="px-6 mx-6">
+    <blockquote class="px-6 mx-6">
         Aikon is a modular platform designed to empower humanities scholars in leveraging artificial intelligence and computer vision methods for analyzing large-scale heritage collections. It offers a user-friendly interface for visualizing, extracting, and analyzing illustrations from historical documents, fostering interdisciplinary collaboration and sustainability across digital humanities projects. Built on proven technologies and interoperable formats, Aikon's adaptable architecture supports projects involving visual materials.
-      </blockquote>
+    </blockquote>
 
-      <p class="buttons is-centered pt-3">
+    <p class="buttons is-centered pt-3">
         <a class="button is-medium" href="https://github.com/Aikon-platform/aikon" target="_blank">
           <span class="icon">
             <i class="fab fa-github"></i>
           </span>
-          <span>GitHub</span>
+            <span>GitHub</span>
         </a>
         <a class="button is-medium" href="https://github.com/Aikon-platform/aikon" target="_blank">
           <span class="icon">
             <i class="fa fa-book"></i>
           </span>
-          <span>Article</span>
+            <span>Article</span>
         </a>
-      </p>
+    </p>
 
-      <section>
+    <section class="section">
         <h2 class="title">Overview</h2>
-        <img class="image" src="aikon-architecture.png" alt="Aikon architecture">
-        <p>
-          At its core, Aikon allows researchers to describe their sources, import scans, request automatic processing, and manually refine results. Built on proven technologies and interoperable formats, including established standards such as IIIF, the platform's architecture supports a wide range of visual materials. Aikon's data model, centered around the concepts of Series, Witness, and Content, provides a flexible framework capable of describing diverse source materials while facilitating alignment across varied corpora.
+        <img class="image px-3" src="aikon-architecture.png" alt="Aikon architecture">
+        <p class="block">
+            At its core, Aikon allows researchers to describe their sources, import scans, request automatic processing, and manually refine results. Built on proven technologies and interoperable formats, including established standards such as IIIF, the platform's architecture supports a wide range of visual materials. Aikon's data model, centered around the concepts of Series, Witness, and Content, provides a flexible framework capable of describing diverse source materials while facilitating alignment across varied corpora.
         </p>
-        <p>
-          The platform's modular structure enables easy integration of additional functionalities, with current applications including illustration extraction, similarity search, and vectorization. Aikon is not tied to any predetermined analysis methods; all stages can be performed manually or automated, with specialized models customizable to specific datasets. This approach ensures adaptability to various research needs while maintaining reproducibility. By fostering interdisciplinary collaboration and sustainability across digital humanities projects, Aikon aims to assist researchers to explore corpora at an unprecedented scale, helping bridging the gap between advanced computational methods and the nuanced requirements of humanities research.
+        <p class="block">
+            The platform's modular structure enables easy integration of additional functionalities, with current applications including illustration extraction, similarity search, and vectorization. Aikon is not tied to any predetermined analysis methods; all stages can be performed manually or automated, with specialized models customizable to specific datasets. This approach ensures adaptability to various research needs while maintaining reproducibility. By fostering interdisciplinary collaboration and sustainability across digital humanities projects, Aikon aims to assist researchers to explore corpora at an unprecedented scale, helping bridging the gap between advanced computational methods and the nuanced requirements of humanities research.
         </p>
-      </section>
+    </section>
 
-      <section>
+    <section class="section">
         <h2 class="title">Key Features</h2>
         <ul class="feature-list">
-          <li>Description and visualization of historical sources</li>
-          <li>Custom AI models trained for heritage documents</li>
-          <li>Automatic results exploration and edition</li>
-          <li>Modular architecture for diverse research purposes</li>
+            <li>Description and visualization of historical sources</li>
+            <li>Custom AI models trained for heritage documents</li>
+            <li>Automatic results exploration and edition</li>
+            <li>Modular architecture for diverse research purposes</li>
         </ul>
-      </section>
+    </section>
 
-      <section>
+    <section class="section">
         <h2 class="title">Collaborating Projects</h2>
         <div class="project-list">
-          <div class="project-item">
-            <h3>VHS</h3>
-            <p>Computer Vision and Historical Analysis of Scientific Illustration Circulation</p>
-            <a class="tag is-link" href="https://anr.fr/Projet-ANR-21-CE38-0008">ANR-21-CE38-0008</a>
-          </div>
-          <div class="project-item">
-            <h3>EiDA</h3>
-            <p>EdIter et analyser les Diagrammes astronomiques historiques avec l'intelligence Artificielle</p>
-            <a class="tag is-link" href="https://anr.fr/Projet-ANR-22-CE38-0014">ANR-22-CE38-0014</a>
-          </div>
-          <div class="project-item">
-            <h3>DISCOVER</h3>
-            <p>Discovering and Analyzing Visual Structures</p>
-            <a class="tag is-link" href="https://cordis.europa.eu/project/id/101076028">ERC-101076028</a>
-          </div>
+            <div class="project-item">
+                <h3>VHS</h3>
+                <p>Computer Vision and Historical Analysis of Scientific Illustration Circulation</p>
+                <a class="tag is-link" href="https://anr.fr/Projet-ANR-21-CE38-0008">ANR-21-CE38-0008</a>
+            </div>
+            <div class="project-item">
+                <h3>EiDA</h3>
+                <p>EdIter et analyser les Diagrammes astronomiques historiques avec l'intelligence Artificielle</p>
+                <a class="tag is-link" href="https://anr.fr/Projet-ANR-22-CE38-0014">ANR-22-CE38-0014</a>
+            </div>
+            <div class="project-item">
+                <h3>DISCOVER</h3>
+                <p>Discovering and Analyzing Visual Structures</p>
+                <a class="tag is-link" href="https://cordis.europa.eu/project/id/101076028">ERC-101076028</a>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section>
+    <section class="section">
         <h2 class="title">Platform Interface</h2>
-        <img src="aikon-platform.png" alt="Aikon platform">
-      </section>
+        <img class="image px-3" src="aikon-platform.png" alt="Aikon platform">
+    </section>
 
-      <section>
+    <section class="section">
         <h2 class="title">Get Involved</h2>
         <p>Explore the Aikon project and contribute to its development on <a href="https://github.com/Aikon-platform/aikon" target="_blank">GitHub <i class="fab fa-github"></i></a>.</p>
-      </section>
+    </section>
+
+    <section class="section">
+        <h2>Bibtex</h2>
+        <pre class="code">
+                <code>
+@misc{albouy2024aikon,
+    title={AIKON: a computer vision platform for the Digital Humanities},
+    author={Ségolène Albouy, Jade Norindr, Fouad Aouinti, Clara Grometto, Robin Champenois, Alexandre Guilbaud, Stavros Lazaris, Matthieu Husson and Mathieu Aubry},
+    year={2024},
+}
+                </code>
+            </pre>
+    </section>
+</div>
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
     </div>
-  </section>
+
+        <div class="columns is-centered">
+            <div class="column is-8 has-text-centered">
+                <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union’s Horizon
+                Europe Research and Innovation program under grant agreement No. 101076028.
+            </div>
+        </div>
+</footer>
 </body>
 </html>
