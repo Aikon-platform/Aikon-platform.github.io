@@ -70,6 +70,13 @@
             font-size: 2rem;
             margin-bottom: 10px;
         }
+        blockquote {
+            font-size: 1.05rem;
+            margin: 2em 10vw;
+            background-color: #f1f3f4;
+            border-radius: 1em;
+            padding: 1em;
+        }
 
         .project-list {
             display: flex;
@@ -89,6 +96,14 @@
         @media (max-width: 768px) {
             .project-item {
                 width: 100%;
+            }
+            .reference {
+                padding-left: 4vw;
+                padding-right: 4vw;
+            }
+            blockquote {
+                margin-left: 2vw;
+                margin-right: 2vw;
             }
         }
         .feature-list li {
@@ -141,7 +156,7 @@
         </div>
     </div>
 
-    <blockquote class="px-6 mx-6">
+    <blockquote>
         Aikon is a modular platform designed to empower humanities scholars in leveraging artificial intelligence and computer vision methods for analyzing large-scale heritage collections. It offers a user-friendly interface for visualizing, extracting, and analyzing illustrations from historical documents, fostering interdisciplinary collaboration and sustainability across digital humanities projects. Built on proven technologies and interoperable formats, Aikon's adaptable architecture supports projects involving visual materials.
     </blockquote>
 
@@ -160,7 +175,7 @@
         </a>
     </p>
 
-    <section class="section">
+    <div class="content">
         <h2 class="title">Overview</h2>
         <img class="image px-3" src="aikon-architecture.png" alt="Aikon architecture">
         <p class="block">
@@ -169,9 +184,9 @@
         <p class="block">
             The platform's modular structure enables easy integration of additional functionalities, with current applications including illustration extraction, similarity search, and vectorization. Aikon is not tied to any predetermined analysis methods; all stages can be performed manually or automated, with specialized models customizable to specific datasets. This approach ensures adaptability to various research needs while maintaining reproducibility. By fostering interdisciplinary collaboration and sustainability across digital humanities projects, Aikon aims to assist researchers to explore corpora at an unprecedented scale, helping bridging the gap between advanced computational methods and the nuanced requirements of humanities research.
         </p>
-    </section>
+    </div>
 
-    <section class="section">
+    <div class="content">
         <h2 class="title">Key Features</h2>
         <ul class="feature-list">
             <li>Description and visualization of historical sources</li>
@@ -179,9 +194,9 @@
             <li>Automatic results exploration and edition</li>
             <li>Modular architecture for diverse research purposes</li>
         </ul>
-    </section>
+    </div>
 
-    <section class="section">
+    <div class="content">
         <h2 class="title">Collaborating Projects</h2>
         <div class="project-list">
             <div class="project-item">
@@ -200,19 +215,19 @@
                 <a class="tag is-link" href="https://cordis.europa.eu/project/id/101076028">ERC-101076028</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="section">
+    <div class="content">
         <h2 class="title">Platform Interface</h2>
         <img class="image px-3" src="aikon-platform.png" alt="Aikon platform">
-    </section>
+    </div>
 
-    <section class="section">
+    <div class="content">
         <h2 class="title">Get Involved</h2>
         <p>Explore the Aikon project and contribute to its development on <a href="https://github.com/Aikon-platform/aikon" target="_blank">GitHub <i class="fab fa-github"></i></a>.</p>
-    </section>
+    </div>
 
-    <section class="section">
+    <div class="content">
         <h2 class="title">Bibtex</h2>
         <pre class="code">
                 <code>
@@ -233,7 +248,7 @@
 }
                 </code>
             </pre>
-    </section>
+    </
 </div>
 <footer class="footer mt-6 pb-5 pt-5" data-theme="light">
     <div class="columns is-centered" style="padding: 0 7vw">
