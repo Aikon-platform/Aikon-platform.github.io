@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>User Documentation - AIKON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIKON User Documentation">
+    <link rel="icon" type="image/png" href="../static/img/favicon.png"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+            <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="../index.html">Home</a>
+            <a class="navbar-item is-active" href="index.html">User Documentation</a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="doc-container">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">AIKON</a></li>
+            <li class="is-active"><a href="#" aria-current="page">User Documentation</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="title is-2">
+        <span class="icon"><i class="fas fa-book"></i></span>
+        User Documentation
+    </h1>
+
+    <p class="block">
+        AIKON is a modular platform designed to support historians working with visual materials.
+        It provides tools for building document corpora, applying computer vision algorithms,
+        and analyzing results through dedicated interfaces.
+    </p>
+
+    <div class="doc-section">
+        <h2 class="title is-4">Platform Workflow</h2>
+        <p>
+            AIKON guides users through three interconnected phases: corpus construction,
+            targeted processing, and results validation. Each phase is designed to maintain
+            researcher control over automated outputs.
+        </p>
+        <img src="../static/img/workflow.png" alt="AIKON workflow diagram">
+    </div>
+
+    <div class="doc-section">
+        <h2 class="title is-4">Documentation Sections</h2>
+        <div class="doc-nav">
+            <a href="corpus-constitution.html" class="doc-nav-item">
+                <div class="icon"><i class="fas fa-database"></i></div>
+                <h3>Corpus Constitution</h3>
+                <p>Create and organize your document corpus using the platform's data model.</p>
+            </a>
+            <a href="document-processing.html" class="doc-nav-item">
+                <div class="icon"><i class="fas fa-cogs"></i></div>
+                <h3>Document Processing</h3>
+                <p>Apply computer vision algorithms to extract regions, compute similarities, and vectorize diagram.</p>
+            </a>
+            <a href="analysis-interpretation.html" class="doc-nav-item">
+                <div class="icon"><i class="fas fa-chart-network"></i></div>
+                <h3>Analysis & Interpretation</h3>
+                <p>Explore results through visualization tools and examine transmission networks across your corpus.</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="doc-section">
+        <h2 class="title is-4">Quick Start</h2>
+        <ol class="step-list">
+            <li>
+                <strong>Add your documents</strong><br>
+                Upload digitizations and describe your sources using the witness, series, and work entities.
+            </li>
+            <li>
+                <strong>Create a document set</strong><br>
+                Select documents to group them for processing.
+            </li>
+            <li>
+                <strong>Launch treatments</strong><br>
+                Apply region extraction, similarity computation, or other algorithms to your document set.
+            </li>
+            <li>
+                <strong>Validate and analyze</strong><br>
+                Review results, correct detections, and explore transmission patterns.
+            </li>
+        </ol>
+    </div>
+</div>
+
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="../static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="../static/logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+            <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union's Horizon
+            Europe<br>Research and Innovation program under grant agreement No. 101076028.
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+        });
+    });
+});
+</script>
+</body>
+</html>

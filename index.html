@@ -13,6 +13,35 @@
 </head>
 
 <body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+            <img src="static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="userguide/index.html">User Documentation</a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
     <h1 class="title is-2 py-3 px-4">
         <img src="static/img/favicon.png" alt="Aikon logo" style="height:30px; width: 30px; display: inline">
@@ -171,6 +200,7 @@
 
     <div class="content">
         <h2 class="title">Platform Interface</h2>
+
         <p class="block pt-3">
             To get an account on <a href="https://aikon.enpc.fr" target="_blank">aikon.enpc.fr</a> to try all platform
             features, don't hesitate to <a href="mailto:segolene.enpc@gmail.com">contact us</a>.
@@ -252,5 +282,19 @@
         </div>
     </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    });
+</script>
 </body>
 </html>

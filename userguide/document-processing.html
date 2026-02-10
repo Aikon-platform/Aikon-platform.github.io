@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Document Processing - AIKON Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIKON User Documentation - Document Processing">
+    <link rel="icon" type="image/png" href="../static/img/favicon.png"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+            <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="../index.html">Home</a>
+            <a class="navbar-item is-active" href="index.html">User Documentation</a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="doc-container">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">AIKON</a></li>
+            <li><a href="index.html">Documentation</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Document Processing</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="title is-2">
+        <span class="icon"><i class="fas fa-cogs"></i></span>
+        Document Processing
+    </h1>
+
+    <p class="block">
+        AIKON enables targeted processing of document sets using computer vision algorithms.
+        Users select documents, configure treatments, and review results through dedicated interfaces.
+    </p>
+
+    <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/Fc2MLknb7Ik"
+            allowfullscreen>
+    </iframe>
+
+    <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+            <li><a href="#document-sets">Creating Document Sets</a></li>
+            <li><a href="#treatments">Launching Treatments</a></li>
+            <li><a href="#region-extraction">Region Extraction Results</a></li>
+            <li><a href="#similarity">Similarity Results</a></li>
+        </ul>
+    </nav>
+
+    <div class="doc-section" id="document-sets">
+        <h2 class="title is-4">Creating Document Sets</h2>
+        <p>
+            A document set is a personal collection of witnesses, works, and series.
+            Sets group materials for processing according to your research logic.
+        </p>
+
+        <h3 class="title is-5">Steps to Create a Document Set</h3>
+        <ol class="step-list">
+            <li>
+                <strong>Browse your corpus</strong><br>
+                Use the search interface to find relevant documents. Filter by metadata fields.
+            </li>
+            <li>
+                <strong>Add documents to selection</strong><br>
+                Click the "Add to selection" button on each document you want to include.
+            </li>
+            <li>
+                <strong>Review your selection</strong><br>
+                Click the "Selection" button to view selected documents in a modal.
+            </li>
+            <li>
+                <strong>Save the document set</strong><br>
+                Give your set a title and save it. Click "Go to treatment" to proceed with processing.
+            </li>
+        </ol>
+
+        <img src="../static/img/document-set-list.png" alt="Document set interface">
+    </div>
+
+    <div class="doc-section" id="treatments">
+        <h2 class="title is-4">Launching Treatments</h2>
+        <p>
+            Treatments represent tasks applied to document sets.
+            AIKON handles three types of processes:
+        </p>
+
+        <ul>
+            <li><strong>Region localization:</strong> identify visual components (illustrations, text lines, diagrams)</li>
+            <li><strong>Region comparison:</strong> compute similarity scores between localized regions</li>
+            <li><strong>Region analysis:</strong> generate metadata for regions (vectorization, transcription)</li>
+        </ul>
+
+        <h3 class="title is-5">Treatment Form Fields</h3>
+        <table class="field-table">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Task type</strong></td>
+                    <td>Select extraction, similarity, vectorization, or other available algorithms</td>
+                </tr>
+                <tr>
+                    <td><strong>Document set</strong></td>
+                    <td>Choose the set of documents to process</td>
+                </tr>
+                <tr>
+                    <td><strong>Notify by email</strong></td>
+                    <td>Receive notification when the task completes</td>
+                </tr>
+                <tr>
+                    <td><strong>Settings</strong></td>
+                    <td>Configure algorithm-specific parameters and model selection</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <img src="../static/img/treatment-form.png" alt="Treatment form screenshot">
+
+        <p>
+            Track treatment status in the treatment list interface.
+            Processing time depends on document count and algorithm complexity.
+        </p>
+    </div>
+
+    <div class="doc-section" id="region-extraction">
+        <h2 class="title is-4">Region Extraction Results</h2>
+        <p>
+            After region extraction, navigate to a witness to view detected regions.
+            Two views are available:
+        </p>
+
+        <ul>
+            <li><strong>Document overview:</strong> all regions displayed at once for quick review</li>
+            <li><strong>Per-page view:</strong> paginated display for detailed inspection</li>
+        </ul>
+
+        <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/11VpUQAkosY"
+                allowfullscreen>
+        </iframe>
+
+        <h3 class="title is-5">Editing Regions</h3>
+        <p>
+            AIKON provides tools to correct automated detections:
+        </p>
+        <ul>
+            <li><strong>Delete regions:</strong> select regions and click "Delete selected regions"</li>
+            <li><strong>Add missing regions:</strong> click "Go to editor" to open the Mirador viewer</li>
+            <li><strong>Refine bounding boxes:</strong> adjust region coordinates in the viewer</li>
+        </ul>
+
+        <img src="../static/img/region-page.png" alt="Region extraction validation screenshot">
+    </div>
+
+    <div class="doc-section" id="similarity">
+        <h2 class="title is-4">Similarity Results</h2>
+        <p>
+            The similarity interface displays ranked matches for each region.
+            Researchers can classify correspondences and build validated networks.
+        </p>
+
+        <img src="../static/img/similarity-interface.png" alt="Similarity interface screenshot">
+
+        <h3 class="title is-5">Annotation Levels</h3>
+        <ul>
+            <li><strong>Exact match:</strong> identical visual reproduction</li>
+            <li><strong>Partial match:</strong> shared elements with modifications</li>
+            <li><strong>Semantic match:</strong> similar content, different visual form</li>
+            <li><strong>No match:</strong> false positive from the algorithm</li>
+        </ul>
+
+        <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/NbBVWM7t5f4"
+                allowfullscreen>
+        </iframe>
+
+        <h3 class="title is-5">Match Propagation</h3>
+        <p>
+            Annotated matches enable propagation: if A matches B and B matches C,
+            then A and C form a propagated similarity.
+            This helps reveal annotation inconsistencies and discover new connections.
+        </p>
+
+        <h3 class="title is-5">Filtering and Comparison</h3>
+        <p>
+            Use the toolbar to filter results by score, witness, and similarity level.
+            The detailed view (eye button) allows overlaying images for precise comparison.
+        </p>
+
+        <img src="../static/img/comparison-modal.png" alt="Similarity comparison modal">
+    </div>
+
+
+    <div class="nav-buttons">
+        <a href="corpus-constitution.html" class="button">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Corpus Constitution</span>
+        </a>
+        <a href="analysis-interpretation.html" class="button is-link">
+            <span>Analysis & Interpretation</span>
+            <span class="icon"><i class="fas fa-arrow-right"></i></span>
+        </a>
+    </div>
+</div>
+
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="../static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="../static/logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2"
+           href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+            <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union's Horizon
+            Europe<br>Research and Innovation program under grant agreement No. 101076028.
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+        });
+    });
+});
+</script>
+</body>
+</html>

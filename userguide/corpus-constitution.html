@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Corpus Constitution - AIKON Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIKON User Documentation - Corpus Constitution">
+    <link rel="icon" type="image/png" href="../static/img/favicon.png"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+            <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="../index.html">Home</a>
+            <a class="navbar-item is-active" href="index.html">User Documentation</a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="doc-container">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs">
+        <ul class="breadcrumb">
+            <li><a href="../index.html">AIKON</a></li>
+            <li><a href="index.html">Documentation</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Corpus Constitution</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="title is-2">
+        <span class="icon"><i class="fas fa-database"></i></span>
+        Corpus Constitution
+    </h1>
+
+    <p class="block">
+        AIKON uses a flexible data model to describe historical documents.
+        This model distinguishes intellectual content from physical materiality,
+        enabling researchers to map connections across scattered corpora.
+    </p>
+
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/vQQhuUG40Ag"
+        allowfullscreen>
+    </iframe>
+
+    <nav class="toc">
+        <h3>On this page</h3>
+        <ul>
+            <li><a href="#data-model">Data Model Overview</a></li>
+            <li><a href="#witness">Adding a Witness</a></li>
+            <li><a href="#series">Creating a Series</a></li>
+            <li><a href="#work">Defining a Work</a></li>
+            <li><a href="#digitization">Uploading Digitizations</a></li>
+        </ul>
+    </nav>
+
+    <div class="doc-section" id="data-model">
+        <h2 class="title is-4">Data Model Overview</h2>
+        <p>
+            AIKON's data model is inspired by CIDOC-CRM and FRBR standards.
+            It relies on six core entities:
+        </p>
+        <ul>
+            <li><strong>Work:</strong> the abstract intellectual production (ideas and content)</li>
+            <li><strong>Witness:</strong> a physical object preserved at a specific location</li>
+            <li><strong>Series:</strong> a group of witnesses sharing common coherence (e.g., volumes of an edition)</li>
+            <li><strong>Content:</strong> the manifestation of a work within a witness</li>
+            <li><strong>Digitization:</strong> digital representation attached to a witness</li>
+            <li><strong>Regions:</strong> image regions extracted from a digitization</li>
+        </ul>
+        <img src="../static/img/data-model.png" alt="AIKON data model diagram">
+        <p class="has-text-centered is-size-7">
+            Core database entities and their relationships, exemplified with the <em>Encyclopédie</em> of Diderot and D'Alembert.
+        </p>
+    </div>
+
+    <div class="doc-section" id="witness">
+        <h2 class="title is-4">Adding a Witness</h2>
+        <p>
+            A witness constitutes the basic unit of AIKON corpus.
+            It represents a distinct physical document that is illustrated by one or several digitizations.
+        </p>
+
+        <p>
+            Digitizations can be uploaded as PDF files, groups of image or IIIF manifests.
+            The platform automatically converts them to IIIF manifests.
+        </p>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="index.html" class="button">
+            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+            <span>Back to Documentation</span>
+        </a>
+        <a href="document-processing.html" class="button is-link">
+            <span>Document Processing</span>
+            <span class="icon"><i class="fas fa-arrow-right"></i></span>
+        </a>
+    </div>
+</div>
+
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="../static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="../static/logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2"
+           href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+            <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union's Horizon
+            Europe<br>Research and Innovation program under grant agreement No. 101076028.
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+        });
+    });
+});
+</script>
+</body>
+</html>
