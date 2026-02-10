@@ -1,148 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" webcrx="">
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>AIKON: A Modular Computer Vision Platform for Historical Corpora</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Studying Scientific Representations in Diachronic Corpora">
-    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="icon" type="image/png" href="static/img/favicon.png"/>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <style>
-        .code,
-        code {
-            border-radius: 3px;
-            padding: 0 5vw;
-            font-size: 85%;
-            tab-size: 2;
-            color: #6b6b6b;
-        }
-
-        pre {
-            white-space: pre-wrap;
-            background-color: #f4f4f4;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            color: #333;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            margin: 10px 5px !important;
-            padding: 10px;
-        }
-
-        .reference {
-            padding-left: 5vw;
-            padding-right: 5vw;
-            text-align: center;
-            line-height: 0.98;
-        }
-
-        .authors {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-size: 0.9rem;
-        }
-
-        .affiliations {
-            margin-bottom: 20px;
-            font-size: 0.8rem;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 1vw auto;
-            padding: 20px 10vw;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius: 1em;
-        }
-
-        .container h1 {
-            text-align: center;
-            font-size: 24px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        blockquote {
-            font-size: 1.05rem;
-            margin: 2em 6vw;
-            background-color: #f1f3f4;
-            border-radius: 1em;
-            padding: 1em;
-        }
-
-        .project-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: space-around;
-        }
-
-        .project-item {
-            background-color: #f1f3f4;
-            padding: 1rem;
-            border-radius: 8px;
-            width: calc(33% - 1rem);
-            min-width: 250px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .project-item {
-                width: 100%;
-            }
-
-            .reference {
-                padding-left: 3vw;
-                padding-right: 3vw;
-            }
-
-            blockquote {
-                margin-left: 1vw;
-                margin-right: 1vw;
-            }
-
-            .container {
-                padding: 20px 2vw;
-            }
-        }
-
-        .feature-list li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .feature-list li::before {
-            content: "\f00c";
-            font-family: 'Font Awesome 5 Free', serif;
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--bulma-success);
-        }
-
-        .content ul {
-            list-style: none !important;
-        }
-    </style>
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body data-theme="light">
 <div class="container">
     <h1 class="title is-2 py-3 px-4">
-        <img src="favicon.png" alt="Aikon logo" style="height:30px; width: 30px; display: inline">
+        <img src="static/img/favicon.png" alt="Aikon logo" style="height:30px; width: 30px; display: inline">
         AIKON: A Modular Computer Vision Platform for Historical Corpora
     </h1>
 
@@ -165,8 +38,7 @@
             <sup>1</sup> LIGM - Imagine team, École des Ponts, Univ Gustave Eiffel, CNRS, Marne-la-Vallée, France<br>
             <sup>2</sup> LTE, Observatoire de Paris-PSL, CNRS, Paris, France<br>
             <sup>3</sup> ISCD, Institut de mathématique de Jussieu, Sorbonne Université, Paris, France<br>
-            <sup>4</sup> Orient & Méditerranée - UMR 8167, Collège de France, EPHE, Sorbonne Université, Paris,
-            France<br>
+            <sup>4</sup> Orient & Méditerranée - UMR 8167, Collège de France, EPHE, Sorbonne Université, Paris, France<br>
         </div>
     </div>
 
@@ -188,15 +60,15 @@
                 <p>Main platform for computer vision analysis of historical documents</p>
                 <div class="buttons">
                     <a class="button is-small" href="https://github.com/Aikon-platform/aikon" target="_blank">
-                    <span class="icon is-small">
-                        <i class="fab fa-github"></i>
-                    </span>
+                        <span class="icon is-small">
+                            <i class="fab fa-github"></i>
+                        </span>
                         <span>Repository</span>
                     </a>
                     <a class="button is-small is-link" href="https://aikon.enpc.fr" target="_blank">
-                    <span class="icon is-small">
-                        <i class="fa fa-external-link-alt"></i>
-                    </span>
+                        <span class="icon is-small">
+                            <i class="fa fa-external-link-alt"></i>
+                        </span>
                         <span>Demo website</span>
                     </a>
                 </div>
@@ -247,7 +119,7 @@
 
     <div class="content">
         <h2 class="title">Overview</h2>
-        <img class="image px-3" src="teaser.png" alt="Aikon capabilities">
+        <img class="image px-3" src="static/img/teaser.png" alt="Aikon capabilities">
         <p class="block pt-3">
             At its core, Aikon allows researchers to describe their sources, import scans, request automatic processing,
             and manually refine results. Built on proven technologies and interoperable formats, including established
@@ -262,7 +134,7 @@
             models customizable to specific datasets. This approach ensures adaptability to various research needs while
             maintaining reproducibility. By fostering interdisciplinary collaboration and sustainability across digital
             humanities projects, Aikon aims to assist researchers to explore corpora at an unprecedented scale, helping
-            bridging the gap between advanced computational methods and the nuanced requirements of humanities research.
+            to bridge the gap between advanced computational methods and the nuanced requirements of humanities research.
         </p>
     </div>
 
@@ -275,7 +147,7 @@
             <li>Modular architecture for diverse research purposes</li>
         </ul>
 
-        <img class="image px-3" src="workflow.png" alt="Aikon workflow">
+        <img class="image px-3" src="static/img/workflow.png" alt="Aikon workflow">
     </div>
 
     <div class="content">
@@ -308,13 +180,13 @@
             don't hesitate to <a href="mailto:segolene.enpc@gmail.com">contact us</a>.
         </p>
 
-        <img class="image px-3" src="similarity-interface.png" alt="Similarity exploration interface">
+        <img class="image px-3" src="static/img/similarity-interface.png" alt="Similarity exploration interface">
     </div>
 
     <div class="content">
         <h2 class="title">Get Involved</h2>
-        <p>Explore the Aikon project and contribute to its development on <a
-                href="https://github.com/Aikon-platform/aikon" target="_blank">GitHub <i class="fab fa-github"></i></a>.
+        <p>Explore the Aikon project and contribute to its development on
+            <a href="https://github.com/Aikon-platform/aikon" target="_blank">GitHub <i class="fab fa-github"></i></a>.
         </p>
     </div>
 
@@ -347,23 +219,23 @@
     <div class="columns is-centered" style="padding: 0 7vw">
         <a class="column is-2" href="https://imagine-lab.enpc.fr/">
             <figure class="image is-96x96 is-center p-4">
-                <img src="logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+                <img src="static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
             </figure>
         </a>
         <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
             <figure class="image is-128x128 is-center mt-2">
-                <img src="logo/logo-erc.png" alt="European Research Council logo">
+                <img src="static/logo/logo-erc.png" alt="European Research Council logo">
             </figure>
         </a>
         <a class="column is-2"
            href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
             <figure class="image is-96x96 is-center p-2">
-                <img src="logo/logo-cnrs.png" alt="CNRS logo">
+                <img src="static/logo/logo-cnrs.png" alt="CNRS logo">
             </figure>
         </a>
         <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
             <figure class="image is-96x96 is-center p-2">
-                <img src="logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+                <img src="static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
             </figure>
         </a>
     </div>
