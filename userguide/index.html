@@ -19,39 +19,40 @@
             <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
     </div>
+
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="../index.html">Home</a>
-            <a class="navbar-item is-active" href="index.html">User Documentation</a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>GitHub</span>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">
+                    Documentation
                 </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="corpus-constitution.html">
+                        Corpus constitution
+                    </a>
+                    <a class="navbar-item" href="document-processing.html">
+                        Document processing
+                    </a>
+                    <a class="navbar-item" href="analysis-interpretation.html">
+                        Analysis & interpretation
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </nav>
 
 <div class="doc-container">
-    <nav class="breadcrumb-container" aria-label="breadcrumbs">
-        <ul class="breadcrumb">
-            <li><a href="../index.html">AIKON</a></li>
-            <li class="is-active"><a href="#" aria-current="page">User Documentation</a></li>
-        </ul>
-    </nav>
-
-    <h1 class="title is-2">
-        <span class="icon"><i class="fas fa-book"></i></span>
+    <h1 class="title is-3 mt-5">
         User Documentation
     </h1>
 
@@ -75,43 +76,18 @@
         <h2 class="title is-4">Documentation Sections</h2>
         <div class="doc-nav">
             <a href="corpus-constitution.html" class="doc-nav-item">
-                <div class="icon"><i class="fas fa-database"></i></div>
                 <h3>Corpus Constitution</h3>
                 <p>Create and organize your document corpus using the platform's data model.</p>
             </a>
             <a href="document-processing.html" class="doc-nav-item">
-                <div class="icon"><i class="fas fa-cogs"></i></div>
                 <h3>Document Processing</h3>
                 <p>Apply computer vision algorithms to extract regions, compute similarities, and vectorize diagram.</p>
             </a>
             <a href="analysis-interpretation.html" class="doc-nav-item">
-                <div class="icon"><i class="fas fa-chart-network"></i></div>
                 <h3>Analysis & Interpretation</h3>
                 <p>Explore results through visualization tools and examine transmission networks across your corpus.</p>
             </a>
         </div>
-    </div>
-
-    <div class="doc-section">
-        <h2 class="title is-4">Quick Start</h2>
-        <ol class="step-list">
-            <li>
-                <strong>Add your documents</strong><br>
-                Upload digitizations and describe your sources using the witness, series, and work entities.
-            </li>
-            <li>
-                <strong>Create a document set</strong><br>
-                Select documents to group them for processing.
-            </li>
-            <li>
-                <strong>Launch treatments</strong><br>
-                Apply region extraction, similarity computation, or other algorithms to your document set.
-            </li>
-            <li>
-                <strong>Validate and analyze</strong><br>
-                Review results, correct detections, and explore transmission patterns.
-            </li>
-        </ol>
     </div>
 </div>
 

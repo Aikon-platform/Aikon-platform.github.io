@@ -22,11 +22,8 @@ body {
     padding: 10px;
 }
 
-/* Navbar */
 .navbar {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    margin-bottom: 1rem;
+    background-color: transparent;
 }
 
 .navbar-item img {
@@ -136,6 +133,10 @@ blockquote {
     list-style: none !important;
 }
 
+strong {
+    color: var(--bulma-link);
+}
+
 /* Documentation specific styles */
 .doc-container {
     max-width: 1000px;
@@ -201,34 +202,12 @@ blockquote {
     width: 90%;
     display: block;
     margin: 1rem auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .doc-section img.small {
     width: 60%;
 }
 
-.video-placeholder {
-    background-color: #f1f3f4;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 3rem;
-    text-align: center;
-    margin: 1.5rem 0;
-}
-
-.video-placeholder i {
-    font-size: 3rem;
-    color: #999;
-    margin-bottom: 1rem;
-}
-
-.video-placeholder p {
-    color: #666;
-    margin: 0;
-}
 
 .breadcrumb-container {
     margin-bottom: 1.5rem;
@@ -309,39 +288,4 @@ blockquote {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-}
-
-/* TOC for documentation */
-.toc {
-    background-color: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-}
-
-.toc h3 {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.toc ul {
-    margin: 0;
-    padding-left: 1.5rem;
-}
-
-.toc li {
-    margin-bottom: 0.5rem;
-    padding-left: 0 !important;
-}
-
-.toc li::before {
-    display: none;
-}
-
-.toc a {
-    color: #555;
-}
-
-.toc a:hover {
-    color: var(--bulma-link);
 }

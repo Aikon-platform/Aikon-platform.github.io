@@ -19,40 +19,40 @@
             <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
     </div>
+
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="../index.html">Home</a>
-            <a class="navbar-item is-active" href="index.html">User Documentation</a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>GitHub</span>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">
+                    Documentation
                 </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="corpus-constitution.html">
+                        Corpus constitution
+                    </a>
+                    <a class="navbar-item" href="document-processing.html">
+                        Document processing
+                    </a>
+                    <a class="navbar-item" href="analysis-interpretation.html">
+                        Analysis & interpretation
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </nav>
 
 <div class="doc-container">
-    <nav class="breadcrumb-container" aria-label="breadcrumbs">
-        <ul class="breadcrumb">
-            <li><a href="../index.html">AIKON</a></li>
-            <li><a href="index.html">Documentation</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Corpus Constitution</a></li>
-        </ul>
-    </nav>
-
-    <h1 class="title is-2">
-        <span class="icon"><i class="fas fa-database"></i></span>
+    <h1 class="title is-3 mt-5">
         Corpus Constitution
     </h1>
 
@@ -62,29 +62,13 @@
         enabling researchers to map connections across scattered corpora.
     </p>
 
-    <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/vQQhuUG40Ag"
-        allowfullscreen>
-    </iframe>
-
-    <nav class="toc">
-        <h3>On this page</h3>
-        <ul>
-            <li><a href="#data-model">Data Model Overview</a></li>
-            <li><a href="#witness">Adding a Witness</a></li>
-            <li><a href="#series">Creating a Series</a></li>
-            <li><a href="#work">Defining a Work</a></li>
-            <li><a href="#digitization">Uploading Digitizations</a></li>
-        </ul>
-    </nav>
-
     <div class="doc-section" id="data-model">
         <h2 class="title is-4">Data Model Overview</h2>
         <p>
-            AIKON's data model is inspired by CIDOC-CRM and FRBR standards.
+            AIKON's data model is inspired by CIDOC-CRM and FRBR standards.<br>
             It relies on six core entities:
         </p>
-        <ul>
+        <ul class="py-3">
             <li><strong>Work:</strong> the abstract intellectual production (ideas and content)</li>
             <li><strong>Witness:</strong> a physical object preserved at a specific location</li>
             <li><strong>Series:</strong> a group of witnesses sharing common coherence (e.g., volumes of an edition)</li>
@@ -92,7 +76,7 @@
             <li><strong>Digitization:</strong> digital representation attached to a witness</li>
             <li><strong>Regions:</strong> image regions extracted from a digitization</li>
         </ul>
-        <img src="../static/img/data-model.png" alt="AIKON data model diagram">
+        <img src="../static/img/data-model.png" alt="AIKON data model diagram" style="width: 50%;">
         <p class="has-text-centered is-size-7">
             Core database entities and their relationships, exemplified with the <em>Encyclopédie</em> of Diderot and D'Alembert.
         </p>
@@ -103,12 +87,14 @@
         <p>
             A witness constitutes the basic unit of AIKON corpus.
             It represents a distinct physical document that is illustrated by one or several digitizations.
-        </p>
-
-        <p>
-            Digitizations can be uploaded as PDF files, groups of image or IIIF manifests.
+            Digitizations can be uploaded as PDF files, groups of images or IIIF manifests.
             The platform automatically converts them to IIIF manifests.
         </p>
+
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/vQQhuUG40Ag"
+            allowfullscreen>
+        </iframe>
     </div>
 
     <div class="nav-buttons">

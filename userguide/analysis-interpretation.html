@@ -19,40 +19,40 @@
             <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
     </div>
+
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="../index.html">Home</a>
-            <a class="navbar-item is-active" href="index.html">User Documentation</a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>GitHub</span>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">
+                    Documentation
                 </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="corpus-constitution.html">
+                        Corpus constitution
+                    </a>
+                    <a class="navbar-item" href="document-processing.html">
+                        Document processing
+                    </a>
+                    <a class="navbar-item" href="analysis-interpretation.html">
+                        Analysis & interpretation
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </nav>
 
 <div class="doc-container">
-    <nav class="breadcrumb-container" aria-label="breadcrumbs">
-        <ul class="breadcrumb">
-            <li><a href="../index.html">AIKON</a></li>
-            <li><a href="index.html">Documentation</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Analysis & Interpretation</a></li>
-        </ul>
-    </nav>
-
-    <h1 class="title is-2">
-        <span class="icon"><i class="fas fa-project-diagram"></i></span>
+    <h1 class="title is-3 mt-5">
         Analysis & Interpretation
     </h1>
 
@@ -67,16 +67,9 @@
             allowfullscreen>
     </iframe>
 
-    <nav class="toc">
-        <h3>On this page</h3>
-        <ul>
-            <li><a href="#set-level">Document Set-Level Visualizations</a></li>
-        </ul>
-    </nav>
-
     <div class="doc-section" id="set-level">
-        <h2 class="title is-4">Set-Level Visualizations</h2>
-        <p>
+        <h2 class="title is-4 pt-5">Set-Level Visualizations</h2>
+        <p class="pb-3">
             Document set visualizations aggregate similarity data across multiple witnesses.
             These tools help identify document relationships.
         </p>
@@ -87,17 +80,17 @@
                 allowfullscreen>
         </iframe>
 
-        <h3 class="title is-5">Filtering Options</h3>
+        <h3 class="title is-5 pt-3">Filtering Options</h3>
         <p>
             All visualizations support filtering:
         </p>
-        <ul>
-            <li>Filter by document to focus on specific witnesses</li>
-            <li>Filter by similarity category (exact, partial, semantic)</li>
-            <li>Adjust score thresholds to show only high-confidence matches</li>
+        <ul class="py-3">
+            <li><strong>Document</strong>: Filter by document to focus on specific witnesses</li>
+            <li><strong>Category</strong>: Filter by similarity category (exact, partial, semantic)</li>
+            <li><strong>Score</strong>: Adjust score thresholds to show only high-confidence matches</li>
         </ul>
 
-        <h3 class="title is-5">Clusters</h3>
+        <h3 class="title is-5 pt-3">Clusters</h3>
         <p>
             Document set clusters group images that are linked by at least on pair
             of similarities whose score exceeds the selected threshold.
@@ -109,7 +102,7 @@
                 allowfullscreen>
         </iframe>
 
-        <h3 class="title is-5">Matrix Visualization</h3>
+        <h3 class="title is-5 pt-3">Matrix Visualization</h3>
         <p>
             The similarity matrix shows pairwise document comparisons.
             Color intensity indicates the number of similar regions between documents.
@@ -127,7 +120,7 @@
             appear clustered in specific sections, or follow reorganization patterns.
         </p>
 
-        <h3 class="title is-5">Document Network Graph</h3>
+        <h3 class="title is-5 pt-3">Document Network Graph</h3>
         <p>
             Documents appear as nodes in an interactive graph.
             Edge width corresponds to the number of shared regions.
@@ -141,7 +134,7 @@
             This makes it easy to identify visual shifts, such as systematic mirroring.
         </p>
 
-        <h3 class="title is-5">Region Network Graph</h3>
+        <h3 class="title is-5 pt-3">Region Network Graph</h3>
         <p>
             At the region level, the network displays all extracted regions from a document set.
             Nodes represent individual regions; edges represent correspondences.
@@ -149,13 +142,13 @@
 
         <img src="../static/img/image-network.png" alt="Graph visualization of region similarities">
 
-        <ul>
+        <ul class="py-3">
             <li><strong>Node size:</strong> proportional to the number of connections</li>
             <li><strong>Edge width:</strong> reflects similarity score (when available)</li>
             <li><strong>Selection:</strong> click nodes to view images and metadata</li>
         </ul>
 
-        <p>
+        <p class="pb-3">
             Large nodes indicate commonly copied images.
             Isolated nodes represent unique illustrations.
         </p>
@@ -166,7 +159,7 @@
                 allowfullscreen>
         </iframe>
 
-        <h3 class="title is-5">Stemma editor</h3>
+        <h3 class="title is-5 pt-3">Stemma editor</h3>
         <p>
             The stemma editor allows users to try different ways to connect document
             within the set and test their hypothesis by looking at regions of interest

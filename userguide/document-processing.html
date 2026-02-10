@@ -19,40 +19,40 @@
             <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
     </div>
+
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="../index.html">Home</a>
-            <a class="navbar-item is-active" href="index.html">User Documentation</a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>GitHub</span>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">
+                    Documentation
                 </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="corpus-constitution.html">
+                        Corpus constitution
+                    </a>
+                    <a class="navbar-item" href="document-processing.html">
+                        Document processing
+                    </a>
+                    <a class="navbar-item" href="analysis-interpretation.html">
+                        Analysis & interpretation
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </nav>
 
 <div class="doc-container">
-    <nav class="breadcrumb-container" aria-label="breadcrumbs">
-        <ul class="breadcrumb">
-            <li><a href="../index.html">AIKON</a></li>
-            <li><a href="index.html">Documentation</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Document Processing</a></li>
-        </ul>
-    </nav>
-
-    <h1 class="title is-2">
-        <span class="icon"><i class="fas fa-cogs"></i></span>
+    <h1 class="title is-3 mt-5">
         Document Processing
     </h1>
 
@@ -66,42 +66,12 @@
             allowfullscreen>
     </iframe>
 
-    <nav class="toc">
-        <h3>On this page</h3>
-        <ul>
-            <li><a href="#document-sets">Creating Document Sets</a></li>
-            <li><a href="#treatments">Launching Treatments</a></li>
-            <li><a href="#region-extraction">Region Extraction Results</a></li>
-            <li><a href="#similarity">Similarity Results</a></li>
-        </ul>
-    </nav>
-
-    <div class="doc-section" id="document-sets">
+    <div class="doc-section pt-3" id="document-sets">
         <h2 class="title is-4">Creating Document Sets</h2>
         <p>
             A document set is a personal collection of witnesses, works, and series.
             Sets group materials for processing according to your research logic.
         </p>
-
-        <h3 class="title is-5">Steps to Create a Document Set</h3>
-        <ol class="step-list">
-            <li>
-                <strong>Browse your corpus</strong><br>
-                Use the search interface to find relevant documents. Filter by metadata fields.
-            </li>
-            <li>
-                <strong>Add documents to selection</strong><br>
-                Click the "Add to selection" button on each document you want to include.
-            </li>
-            <li>
-                <strong>Review your selection</strong><br>
-                Click the "Selection" button to view selected documents in a modal.
-            </li>
-            <li>
-                <strong>Save the document set</strong><br>
-                Give your set a title and save it. Click "Go to treatment" to proceed with processing.
-            </li>
-        </ol>
 
         <img src="../static/img/document-set-list.png" alt="Document set interface">
     </div>
@@ -113,39 +83,11 @@
             AIKON handles three types of processes:
         </p>
 
-        <ul>
+        <ul class="py-3">
             <li><strong>Region localization:</strong> identify visual components (illustrations, text lines, diagrams)</li>
             <li><strong>Region comparison:</strong> compute similarity scores between localized regions</li>
             <li><strong>Region analysis:</strong> generate metadata for regions (vectorization, transcription)</li>
         </ul>
-
-        <h3 class="title is-5">Treatment Form Fields</h3>
-        <table class="field-table">
-            <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Task type</strong></td>
-                    <td>Select extraction, similarity, vectorization, or other available algorithms</td>
-                </tr>
-                <tr>
-                    <td><strong>Document set</strong></td>
-                    <td>Choose the set of documents to process</td>
-                </tr>
-                <tr>
-                    <td><strong>Notify by email</strong></td>
-                    <td>Receive notification when the task completes</td>
-                </tr>
-                <tr>
-                    <td><strong>Settings</strong></td>
-                    <td>Configure algorithm-specific parameters and model selection</td>
-                </tr>
-            </tbody>
-        </table>
 
         <img src="../static/img/treatment-form.png" alt="Treatment form screenshot">
 
@@ -162,7 +104,7 @@
             Two views are available:
         </p>
 
-        <ul>
+        <ul class="py-3">
             <li><strong>Document overview:</strong> all regions displayed at once for quick review</li>
             <li><strong>Per-page view:</strong> paginated display for detailed inspection</li>
         </ul>
@@ -172,11 +114,11 @@
                 allowfullscreen>
         </iframe>
 
-        <h3 class="title is-5">Editing Regions</h3>
+        <h3 class="title is-5 pt-3">Editing Regions</h3>
         <p>
             AIKON provides tools to correct automated detections:
         </p>
-        <ul>
+        <ul class="py-3">
             <li><strong>Delete regions:</strong> select regions and click "Delete selected regions"</li>
             <li><strong>Add missing regions:</strong> click "Go to editor" to open the Mirador viewer</li>
             <li><strong>Refine bounding boxes:</strong> adjust region coordinates in the viewer</li>
@@ -194,8 +136,8 @@
 
         <img src="../static/img/similarity-interface.png" alt="Similarity interface screenshot">
 
-        <h3 class="title is-5">Annotation Levels</h3>
-        <ul>
+        <h3 class="title is-5 pt-3">Annotation Levels</h3>
+        <ul class="py-3">
             <li><strong>Exact match:</strong> identical visual reproduction</li>
             <li><strong>Partial match:</strong> shared elements with modifications</li>
             <li><strong>Semantic match:</strong> similar content, different visual form</li>
@@ -207,14 +149,14 @@
                 allowfullscreen>
         </iframe>
 
-        <h3 class="title is-5">Match Propagation</h3>
+        <h3 class="title is-5 pt-3">Match Propagation</h3>
         <p>
             Annotated matches enable propagation: if A matches B and B matches C,
             then A and C form a propagated similarity.
             This helps reveal annotation inconsistencies and discover new connections.
         </p>
 
-        <h3 class="title is-5">Filtering and Comparison</h3>
+        <h3 class="title is-5 pt-3">Filtering and Comparison</h3>
         <p>
             Use the toolbar to filter results by score, witness, and similarity level.
             The detailed view (eye button) allows overlaying images for precise comparison.

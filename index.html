@@ -15,28 +15,37 @@
 <body data-theme="light">
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
+        <a class="navbar-item" href="/">
             <img src="static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </a>
     </div>
+
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="index.html">Home</a>
-            <a class="navbar-item" href="userguide/index.html">User Documentation</a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <a class="button is-link is-light" href="https://github.com/Aikon-platform/aikon" target="_blank">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>GitHub</span>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="userguide/index.html">
+                    Documentation
                 </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="userguide/corpus-constitution.html">
+                        Corpus constitution
+                    </a>
+                    <a class="navbar-item" href="userguide/document-processing.html">
+                        Document processing
+                    </a>
+                    <a class="navbar-item" href="userguide/analysis-interpretation.html">
+                        Analysis & interpretation
+                    </a>
+                </div>
             </div>
         </div>
     </div>
