@@ -163,6 +163,11 @@ ul {
     padding-top: .75rem;
 }
 
+iframe {
+    min-height: 350px;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .grey-box {
         width: 100%;
@@ -188,5 +193,9 @@ ul {
 
     .nav-buttons .txt {
         display: none;
+    }
+
+    iframe {
+        min-height: 300px;
     }
 }
