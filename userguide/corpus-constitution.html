@@ -20,7 +20,7 @@
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -56,7 +56,7 @@
         Corpus Constitution
     </h1>
 
-    <blockquote class="py-3">
+    <blockquote>
         AIKON allows users to build collaborative corpora of historical documents.
         Documents can be grouped into collections for computer vision processing
         and visual analysis.
@@ -64,7 +64,7 @@
 
     <div class="doc-section" id="data-model">
         <h2 class="title">Data Model Overview</h2>
-        <p class="py-3">
+        <p>
             AIKON uses a flexible data model to describe historical documents.
             This model distinguishes intellectual content from physical materiality,
             enabling researchers to map connections across scattered corpora.
@@ -72,7 +72,7 @@
         <p>
             AIKON's data model relies on six core entities:
         </p>
-        <ul class="py-3">
+        <ul>
             <li><strong>Work</strong> the abstract intellectual production (ideas and content)</li>
             <li><strong>Witness</strong> a physical object preserved at a specific location</li>
             <li><strong>Series</strong> a group of witnesses sharing common coherence (e.g., volumes of an edition)</li>
@@ -88,18 +88,18 @@
 
     <div class="doc-section" id="witness">
         <h2 class="title">Adding a Witness</h2>
-        <p class="py-3">
+        <p>
             A witness constitutes the basic unit of AIKON corpus.
             It represents a distinct physical document that is illustrated by one or several digitizations.
         </p>
-        <p class="py-3">
+        <p>
             Digitizations can be uploaded as PDF files, groups of images or IIIF manifests.
             The platform automatically converts them to IIIF manifests.
         </p>
 
         <div class="has-text-centered pt-3">
             <!--Witness form-->
-            <iframe width="560" height="315"
+            <iframe width="100%"
                 src="https://www.youtube.com/embed/vQQhuUG40Ag"
                 allowfullscreen>
             </iframe>
@@ -112,7 +112,7 @@
 
     <div class="doc-section" id="document-set">
         <h2 class="title">Creating a document set</h2>
-        <p class="py-3">
+        <p>
             A document set is a personal collection of witnesses, works, and series.
             Document sets group materials according to your research logic.
             They constitute the basis for <a href="document-processing.html">processing tasks</a> and
@@ -123,35 +123,35 @@
 
         <div class="has-text-centered pt-3">
             <!--Document set selection-->
-            <iframe width="560" height="315"
+            <iframe width="100%"
                     src="https://www.youtube.com/embed/1xeMBN9MwH4"
                     allowfullscreen>
             </iframe>
         </div>
 
-        <p class="py-3">
+        <p>
             Document set can be constituted from scratch or by loading an existing set.
-            Access, modify or empty the content of current set by clicking in the selection button in the bottom right corner.
+            Access, modify or empty the content of current set by clicking in the "Selection" button in the bottom right corner.
         </p>
 
-        <img src="../static/img/docset-record.png" alt="Document set record in list screenshot">
+        <img src="../static/img/docset-modal.png" alt="Document selection modal screenshot" style="width: 65%;">
 
-        <ul class="py-3">
+        <ul>
             <li><strong>Create a set</strong> by selecting records in the witness, series and work lists</li>
             <li><strong>Load a set</strong> by clicking on "Load to selection" button in the Document Set list</li>
         </ul>
 
-        <img src="../static/img/docset-modal.png" alt="Document selection modal screenshot" style="width: 65%;">
+        <img src="../static/img/docset-record.png" alt="Document set record in list screenshot">
     </div>
 
     <div class="nav-buttons">
-        <a href="index.html" class="button is-gap-1">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>Back to Documentation</span>
+        <a href="index.html" class="button is-link">
+            <span class="mt-1"><i class="fas fa-home"></i></span>
+            <span class="txt pl-3">Back to Documentation</span>
         </a>
-        <a href="document-processing.html" class="button is-link is-gap-1">
-            <span>Document Processing</span>
-            <span class="icon"><i class="fas fa-arrow-right"></i></span>
+        <a href="document-processing.html" class="button">
+            <span class="txt pr-3">Document Processing</span>
+            <span class="mt-1"><i class="fas fa-arrow-right"></i></span>
         </a>
     </div>
 </div>

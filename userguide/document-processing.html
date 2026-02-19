@@ -20,7 +20,7 @@
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -56,7 +56,7 @@
         Document Processing
     </h1>
 
-    <blockquote class="py-3">
+    <blockquote>
         AIKON enables targeted processing of document sets using computer vision algorithms.
         Users select documents, configure treatments, and review results through dedicated interfaces.
     </blockquote>
@@ -66,60 +66,84 @@
 
         <div class="has-text-centered pt-3">
             <!--Launch treatment-->
-            <iframe width="560" height="315"
+            <iframe width="100%"
                 src="https://www.youtube.com/embed/Fc2MLknb7Ik"
                 allowfullscreen>
             </iframe>
         </div>
 
-        <p class="py-3">
+        <p>
             Treatments represent tasks applied to document sets.
             AIKON handles three types of processes:
         </p>
 
-        <ul class="py-3">
+        <ul>
             <li><strong>Region localization</strong> identify visual components (illustrations, text lines, diagrams)</li>
             <li><strong>Region comparison</strong> compute similarity scores between localized regions</li>
             <li><strong>Region analysis</strong> generate metadata for regions (vectorization, transcription)</li>
         </ul>
 
-        <img src="../static/img/treatment-form.png" alt="Treatment form screenshot">
-
-        <p class="py-3">
-            Once the document set is constituted or loaded into selection
+        <p>
+            Once the document set is constituted or loaded into selection,
+            users can access the treatment form and choose which algorithms to apply to the selected documents.
         </p>
 
-        <p class="py-3">
+        <img src="../static/img/treatment-form.png" alt="Treatment form screenshot">
+
+        <p>
             Track treatment status in the treatment list interface.
             Processing time depends on document count and algorithm complexity.
         </p>
     </div>
 
+    <h2 class="title is-4 px-4 py-3">
+        Available treatments
+    </h2>
+
+    <div class="boxes">
+        <a href="#region-extraction" class="grey-box">
+            <h3 class="title is-5 has-text-link mb-3">Region extraction</h3>
+            <p class="has-text-dark is-size-6">Detect and localize visual components in document digitization</p>
+        </a>
+        <a href="#similarity" class="grey-box">
+            <h3 class="title is-5 has-text-link mb-3">Similarity retrieval</h3>
+            <p class="has-text-dark is-size-6">Compute scores to find visually related regions across documents</p>
+        </a>
+        <a href="#vectorization" class="grey-box">
+            <h3 class="title is-5 has-text-link mb-3">Vectorization</h3>
+            <p class="has-text-dark is-size-6">Decompose diagram images into editable geometrical shapes</p>
+        </a>
+    </div>
+
     <div class="doc-section" id="region-extraction">
         <h2 class="title">Region Extraction Results</h2>
-        <p class="py-3">
+        <p>
             After region extraction, navigate to a witness to view detected regions.
             Two views are available:
         </p>
 
-        <ul class="py-3">
+        <ul>
             <li><strong>Document overview</strong> all regions displayed at once for quick review</li>
             <li><strong>Per-page view</strong> paginated display for detailed inspection</li>
         </ul>
 
+        <p>
+            Click on the eye icon to open a modal allowing close examination of the region and its context in the original page image.
+        </p>
+
         <div class="has-text-centered pt-3">
             <!--Explore region extraction-->
-            <iframe width="560" height="315"
+            <iframe width="100%"
                 src="https://www.youtube.com/embed/11VpUQAkosY"
                 allowfullscreen>
             </iframe>
         </div>
 
         <h3 class="title">Editing Regions</h3>
-        <p class="py-3">
+        <p>
             AIKON provides tools to correct automated detections:
         </p>
-        <ul class="py-3">
+        <ul>
             <li><strong>Delete regions</strong> select regions and click "Delete selected regions"</li>
             <li><strong>Add missing regions</strong> click "Go to editor" to open the Mirador viewer</li>
             <li><strong>Refine bounding boxes</strong> adjust region coordinates in the viewer</li>
@@ -132,23 +156,19 @@
         <h2 class="title">Similarity Results</h2>
         <p>
             The similarity interface displays ranked matches for each region.
-            Researchers can classify correspondences and build validated networks.
+            Researchers can classify correspondences to build validated networks.
         </p>
 
         <img src="../static/img/similarity-interface.png" alt="Similarity interface screenshot">
 
         <h3 class="title">Annotation Levels</h3>
-        <ul class="py-3">
+        <ul>
             <li><strong>Exact match</strong> identical visual reproduction</li>
             <li><strong>Partial match</strong> shared elements with modifications</li>
             <li><strong>Semantic match</strong> similar content, different visual form</li>
             <li><strong>No match</strong> false positive from the algorithm</li>
+            <li><strong>User match</strong> correspondance specific to the user</li>
         </ul>
-
-        <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/NbBVWM7t5f4"
-                allowfullscreen>
-        </iframe>
 
         <h3 class="title">Match Propagation</h3>
         <p>
@@ -156,6 +176,14 @@
             then A and C form a propagated similarity.
             This helps reveal annotation inconsistencies and discover new connections.
         </p>
+
+        <div class="has-text-centered pt-3">
+            <!--Explore similarities-->
+            <iframe width="100%"
+                src="https://www.youtube.com/embed/NbBVWM7t5f4"
+                allowfullscreen>
+            </iframe>
+        </div>
 
         <h3 class="title">Filtering and Comparison</h3>
         <p>
@@ -166,15 +194,25 @@
         <img src="../static/img/comparison-modal.png" alt="Similarity comparison modal">
     </div>
 
+    <div class="doc-section" id="vectorization">
+        <h2 class="title">Vectorization</h2>
+
+        <p>
+            Visualize geometric shapes extracted from diagram images overlayed on the original image.
+            Each vectorization can be downloaded as an SVG file for further editing in vector graphics software.
+        </p>
+
+        <img src="../static/img/vectorization.png" alt="Vectorization view screenshot">
+    </div>
 
     <div class="nav-buttons">
-        <a href="corpus-constitution.html" class="button is-gap-1">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>Corpus Constitution</span>
+        <a href="corpus-constitution.html" class="button">
+            <span class="mt-1"><i class="fas fa-arrow-left"></i></span>
+            <span class="txt pl-3">Corpus Constitution</span>
         </a>
-        <a href="analysis-interpretation.html" class="button is-link is-gap-1">
-            <span>Analysis & Interpretation</span>
-            <span class="icon"><i class="fas fa-arrow-right"></i></span>
+        <a href="analysis-interpretation.html" class="button">
+            <span class="txt pr-3">Analysis & Interpretation</span>
+            <span class="mt-1"><i class="fas fa-arrow-right"></i></span>
         </a>
     </div>
 </div>

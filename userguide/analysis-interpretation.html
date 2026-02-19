@@ -20,7 +20,7 @@
             <span class="ml-2 has-text-weight-semibold">AIKON</span>
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -56,12 +56,12 @@
         Analysis & Interpretation
     </h1>
 
-    <p class="py-3">
+    <p>
         AIKON provides visualization interfaces to help researchers examine transmission
         networks and circulation patterns across corpora.
     </p>
 
-<!--    <p class="py-3">-->
+<!--    <p>-->
 <!--        To access the document set view, select witnesses, series or work in the lists.-->
 <!--    </p>-->
     <img src="../static/img/document-set-list.png" alt="Document set interface">
@@ -74,12 +74,11 @@
         </p>
 
         <!--Document set visualisations-->
-        <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/V1WtQq6GwjI"
+        <iframe width=100%" src="https://www.youtube.com/embed/V1WtQq6GwjI"
                 allowfullscreen>
         </iframe>
 
-        <p class="py-3">
+        <p>
             All visualisations rely on the same underlying data: each document holds a number of extracted image regions,
             and each region is linked to a number of similar regions in other documents. This link is stored as a pair
             of images, associated with a similarity score and a category.
@@ -89,7 +88,7 @@
         <p>
             All visualizations support filtering using sidebar controls:
         </p>
-        <ul class="py-3">
+        <ul>
             <li><strong>Document</strong>: Filter by document to focus on specific witnesses</li>
             <li><strong>Category</strong>: Filter by similarity category (exact, partial, semantic)</li>
             <li><strong>Score</strong>: Adjust score thresholds to show only high-confidence matches</li>
@@ -106,7 +105,7 @@
         </p>
 
         <!--Document set cluster-->
-        <iframe width="560" height="315"
+        <iframe width="100%"
                 src="https://www.youtube.com/embed/aeD1-1rYixo "
                 allowfullscreen>
         </iframe>
@@ -151,7 +150,7 @@
 
         <img src="../static/img/image-network.png" alt="Graph visualization of region similarities">
 
-        <ul class="py-3">
+        <ul>
             <li><strong>Node size:</strong> proportional to the number of connections</li>
             <li><strong>Edge width:</strong> reflects similarity score (when available)</li>
             <li><strong>Selection:</strong> click nodes to view images and metadata</li>
@@ -163,7 +162,7 @@
         </p>
 
         <!--Document set stemma-->
-        <iframe width="560" height="315"
+        <iframe width="100%"
                 src="https://www.youtube.com/embed/rpGSnETNhbk"
                 allowfullscreen>
         </iframe>
@@ -177,13 +176,13 @@
     </div>
 
     <div class="nav-buttons">
-        <a href="document-processing.html" class="button is-gap-1">
-            <span class="icon"><i class="fas fa-arrow-left"></i></span>
-            <span>Document Processing</span>
+        <a href="document-processing.html" class="button">
+            <span class="mt-1"><i class="fas fa-arrow-left"></i></span>
+            <span class="txt pl-3">Document Processing</span>
         </a>
-        <a href="index.html" class="button is-link is-gap-1">
-            <span>Back to Documentation</span>
-            <span class="icon"><i class="fas fa-home"></i></span>
+        <a href="index.html" class="button is-link">
+            <span class="txt pr-3">Back to Documentation</span>
+            <span class="mt-1"><i class="fas fa-home"></i></span>
         </a>
     </div>
 </div>
