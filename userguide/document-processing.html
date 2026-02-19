@@ -51,84 +51,85 @@
     </div>
 </nav>
 
-<div class="doc-container">
+<div class="container">
     <h1 class="title is-3 mt-5">
         Document Processing
     </h1>
 
-    <p class="block">
+    <blockquote class="py-3">
         AIKON enables targeted processing of document sets using computer vision algorithms.
         Users select documents, configure treatments, and review results through dedicated interfaces.
-    </p>
-
-    <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/Fc2MLknb7Ik"
-            allowfullscreen>
-    </iframe>
-
-    <div class="doc-section pt-3" id="document-sets">
-        <h2 class="title is-4">Creating Document Sets</h2>
-        <p>
-            A document set is a personal collection of witnesses, works, and series.
-            Sets group materials for processing according to your research logic.
-        </p>
-
-        <img src="../static/img/document-set-list.png" alt="Document set interface">
-    </div>
+    </blockquote>
 
     <div class="doc-section" id="treatments">
-        <h2 class="title is-4">Launching Treatments</h2>
-        <p>
+        <h2 class="title">Launching Treatments</h2>
+
+        <div class="has-text-centered pt-3">
+            <!--Launch treatment-->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/Fc2MLknb7Ik"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p class="py-3">
             Treatments represent tasks applied to document sets.
             AIKON handles three types of processes:
         </p>
 
         <ul class="py-3">
-            <li><strong>Region localization:</strong> identify visual components (illustrations, text lines, diagrams)</li>
-            <li><strong>Region comparison:</strong> compute similarity scores between localized regions</li>
-            <li><strong>Region analysis:</strong> generate metadata for regions (vectorization, transcription)</li>
+            <li><strong>Region localization</strong> identify visual components (illustrations, text lines, diagrams)</li>
+            <li><strong>Region comparison</strong> compute similarity scores between localized regions</li>
+            <li><strong>Region analysis</strong> generate metadata for regions (vectorization, transcription)</li>
         </ul>
 
         <img src="../static/img/treatment-form.png" alt="Treatment form screenshot">
 
-        <p>
+        <p class="py-3">
+            Once the document set is constituted or loaded into selection
+        </p>
+
+        <p class="py-3">
             Track treatment status in the treatment list interface.
             Processing time depends on document count and algorithm complexity.
         </p>
     </div>
 
     <div class="doc-section" id="region-extraction">
-        <h2 class="title is-4">Region Extraction Results</h2>
-        <p>
+        <h2 class="title">Region Extraction Results</h2>
+        <p class="py-3">
             After region extraction, navigate to a witness to view detected regions.
             Two views are available:
         </p>
 
         <ul class="py-3">
-            <li><strong>Document overview:</strong> all regions displayed at once for quick review</li>
-            <li><strong>Per-page view:</strong> paginated display for detailed inspection</li>
+            <li><strong>Document overview</strong> all regions displayed at once for quick review</li>
+            <li><strong>Per-page view</strong> paginated display for detailed inspection</li>
         </ul>
 
-        <iframe width="560" height="315"
+        <div class="has-text-centered pt-3">
+            <!--Explore region extraction-->
+            <iframe width="560" height="315"
                 src="https://www.youtube.com/embed/11VpUQAkosY"
                 allowfullscreen>
-        </iframe>
+            </iframe>
+        </div>
 
-        <h3 class="title is-5 pt-3">Editing Regions</h3>
-        <p>
+        <h3 class="title">Editing Regions</h3>
+        <p class="py-3">
             AIKON provides tools to correct automated detections:
         </p>
         <ul class="py-3">
-            <li><strong>Delete regions:</strong> select regions and click "Delete selected regions"</li>
-            <li><strong>Add missing regions:</strong> click "Go to editor" to open the Mirador viewer</li>
-            <li><strong>Refine bounding boxes:</strong> adjust region coordinates in the viewer</li>
+            <li><strong>Delete regions</strong> select regions and click "Delete selected regions"</li>
+            <li><strong>Add missing regions</strong> click "Go to editor" to open the Mirador viewer</li>
+            <li><strong>Refine bounding boxes</strong> adjust region coordinates in the viewer</li>
         </ul>
 
         <img src="../static/img/region-page.png" alt="Region extraction validation screenshot">
     </div>
 
     <div class="doc-section" id="similarity">
-        <h2 class="title is-4">Similarity Results</h2>
+        <h2 class="title">Similarity Results</h2>
         <p>
             The similarity interface displays ranked matches for each region.
             Researchers can classify correspondences and build validated networks.
@@ -136,12 +137,12 @@
 
         <img src="../static/img/similarity-interface.png" alt="Similarity interface screenshot">
 
-        <h3 class="title is-5 pt-3">Annotation Levels</h3>
+        <h3 class="title">Annotation Levels</h3>
         <ul class="py-3">
-            <li><strong>Exact match:</strong> identical visual reproduction</li>
-            <li><strong>Partial match:</strong> shared elements with modifications</li>
-            <li><strong>Semantic match:</strong> similar content, different visual form</li>
-            <li><strong>No match:</strong> false positive from the algorithm</li>
+            <li><strong>Exact match</strong> identical visual reproduction</li>
+            <li><strong>Partial match</strong> shared elements with modifications</li>
+            <li><strong>Semantic match</strong> similar content, different visual form</li>
+            <li><strong>No match</strong> false positive from the algorithm</li>
         </ul>
 
         <iframe width="560" height="315"
@@ -149,14 +150,14 @@
                 allowfullscreen>
         </iframe>
 
-        <h3 class="title is-5 pt-3">Match Propagation</h3>
+        <h3 class="title">Match Propagation</h3>
         <p>
             Annotated matches enable propagation: if A matches B and B matches C,
             then A and C form a propagated similarity.
             This helps reveal annotation inconsistencies and discover new connections.
         </p>
 
-        <h3 class="title is-5 pt-3">Filtering and Comparison</h3>
+        <h3 class="title">Filtering and Comparison</h3>
         <p>
             Use the toolbar to filter results by score, witness, and similarity level.
             The detailed view (eye button) allows overlaying images for precise comparison.
@@ -167,11 +168,11 @@
 
 
     <div class="nav-buttons">
-        <a href="corpus-constitution.html" class="button">
+        <a href="corpus-constitution.html" class="button is-gap-1">
             <span class="icon"><i class="fas fa-arrow-left"></i></span>
             <span>Corpus Constitution</span>
         </a>
-        <a href="analysis-interpretation.html" class="button is-link">
+        <a href="analysis-interpretation.html" class="button is-link is-gap-1">
             <span>Analysis & Interpretation</span>
             <span class="icon"><i class="fas fa-arrow-right"></i></span>
         </a>

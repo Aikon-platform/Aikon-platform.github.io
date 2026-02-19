@@ -1,0 +1,450 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" webcrx="">-->
+<!--<head>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+<!--    <title>AIKON: A Modular Computer Vision Platform for Historical Corpora</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <meta name="description" content="Studying Scientific Representations in Diachronic Corpora">-->
+<!--    <link rel="icon" type="image/png" href="favicon.png"/>-->
+
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">-->
+<!--    <style>-->
+<!--        .code,-->
+<!--        code {-->
+<!--            border-radius: 3px;-->
+<!--            padding: 0 5vw;-->
+<!--            font-size: 85%;-->
+<!--            tab-size: 2;-->
+<!--            color: #6b6b6b;-->
+<!--        }-->
+
+<!--        pre {-->
+<!--            white-space: pre-wrap;-->
+<!--            background-color: #f4f4f4;-->
+<!--        }-->
+
+<!--        body {-->
+<!--            font-family: 'Roboto', sans-serif;-->
+<!--            font-size: 16px;-->
+<!--            color: #333;-->
+<!--            line-height: 1.6;-->
+<!--            background-color: #f9f9f9;-->
+<!--            margin: 10px 5px !important;-->
+<!--            padding: 10px;-->
+<!--        }-->
+
+<!--        .container {-->
+<!--            max-width: 900px;-->
+<!--            margin: 1vw auto;-->
+<!--            padding: 20px 10vw;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--            background-color: #fff;-->
+<!--            border-radius: 1em;-->
+<!--        }-->
+
+<!--        .container h1 {-->
+<!--            text-align: center;-->
+<!--            font-size: 24px;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            font-size: 2rem;-->
+<!--            margin-bottom: 10px;-->
+<!--        }-->
+
+<!--        blockquote {-->
+<!--            font-size: 1.05rem;-->
+<!--            margin: 2em 6vw;-->
+<!--            background-color: #f1f3f4;-->
+<!--            border-radius: 1em;-->
+<!--            padding: 1em;-->
+<!--        }-->
+
+<!--        @media (max-width: 768px) {-->
+<!--            blockquote {-->
+<!--                margin-left: 1vw;-->
+<!--                margin-right: 1vw;-->
+<!--            }-->
+
+<!--            .container {-->
+<!--                padding: 20px 2vw;-->
+<!--            }-->
+<!--        }-->
+
+<!--        .toc li {-->
+<!--            margin-bottom: 0;-->
+<!--            padding-left: 2rem;-->
+<!--            position: relative;-->
+<!--        }-->
+
+<!--        .toc li::before {-->
+<!--            content: "\f054";-->
+<!--            font-family: 'Font Awesome 5 Free', serif;-->
+<!--            font-weight: bold;-->
+<!--            position: absolute;-->
+<!--            left: 0;-->
+<!--            color: var(&#45;&#45;bulma-link);-->
+<!--        }-->
+
+<!--        .content ul {-->
+<!--            list-style: none !important;-->
+<!--        }-->
+
+<!--        .content img {-->
+<!--            width: 80%;-->
+<!--            display: block;-->
+<!--            margin: 10px auto 20px auto;-->
+<!--            border: 2px solid #333;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+
+<!--        .content strong {-->
+<!--            color: #333;-->
+<!--        }-->
+
+<!--        .small {-->
+<!--            font-size:0.9rem;-->
+<!--            color:#6b7280;-->
+<!--        }-->
+
+<!--        .content li::before {-->
+<!--            content: "\f054";-->
+<!--            font-family: 'Font Awesome 5 Free', serif;-->
+<!--            font-weight: bold;-->
+<!--            position: absolute;-->
+<!--            left: 0;-->
+<!--            color: #333;-->
+<!--        }-->
+
+<!--        .content li {-->
+<!--            margin-bottom: 0;-->
+<!--            padding-left: 2rem;-->
+<!--            position: relative;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body data-theme="light">-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Forms - AIKON Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIKON User Documentation - Forms">
+    <link rel="icon" type="image/png" href="../static/img/favicon.png"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        .content img {
+            width: 80%;
+            display: block;
+            margin: 10px auto 20px auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+            <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">
+                    Documentation
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="corpus-constitution.html">
+                        Corpus constitution
+                    </a>
+                    <a class="navbar-item" href="document-processing.html">
+                        Document processing
+                    </a>
+                    <a class="navbar-item" href="analysis-interpretation.html">
+                        Analysis & interpretation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="title is-2">
+        <img src="../static/img/favicon.png" alt="Aikon logo" style="height:30px; width: 30px; display: inline">
+        AIKON User's Guide
+    </h1>
+
+    <div class="content">
+        <img src="images/homepage.png" class="tutorial" alt="AIKON Homepage"/>
+
+        <nav class="toc" aria-label="Table of contents">
+            <h2 class="title">Table of contents</h2>
+            <ul>
+                <li><a href="#forms">Forms</a></li>
+                <ul>
+                    <li><a href="#witness">Witness</a></li>
+                    <li><a href="#series">Series</a></li>
+                    <li><a href="#work">Work</a></li>
+                </ul>
+                <li><a href="#sets">Sets and treatments</a></li>
+                <ul>
+                    <li><a href="#document_sets">Document sets</a></li>
+                    <li><a href="#treatments">Treatments</a></li>
+                </ul>
+                <li><a href="#computer_vision">Computer vision results</a></li>
+                <ul>
+                    <li><a href="#extraction">Region extractions</a></li>
+                    <li><a href="#similarity">Similarity</a></li>
+                    <li><a href="#vectorization">Vectorization</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <h2 class="title" id="forms" >Forms</h2>
+        <h3 class="title" id="witness" >Witness</h3>
+        <p class="py-3">
+            Users can add a witness either from the homepage or the witness list interface. In the witness form, users can add metadata to identify the witness and describe its content.
+        </p>
+        <img src="images/form_witness.png" class="tutorial" alt="Witness form screenshot"/>
+        <dl>
+            <dd>
+                <strong>Type</strong> nature of the document (manuscript, letterpress print, woodblock print)<br>
+                <strong>Identification number</strong> identification number from the home institution.<br>
+                <strong>Conservation place</strong> heritage institution preserving the document.
+            <dd class="small">You can also add a new conservation place by clicking on the + sign to input its name, city and the license of their documents.</dd>
+            </dd>
+            <dd>
+                <strong>Pagination type and Number of pages/folios</strong> number of pages/folios of your witness.<br>
+                <strong>Additional notes</strong> free text for information with no dedicated field (e.g. previous owner, bibliographical information, etc.)<br>
+                <strong>External link</strong> link to the digitalization of the witness, its bibliographical notice or a catalog page<br>
+                <strong>Make it public</strong> if you check the box, your witness and its information will be made public to the other users.
+            </dd>
+        </dl>
+
+        <h4 class="title" id="digitization">Digitization</h4>
+        <img src="images/form_digitization.png" class="tutorial" alt="Digitization form screenshot"/>
+        <dl>
+            <dd>
+                <strong>Type</strong> nature of the digitization (Image files, PDF or IIIF manifest).<br>
+                <strong>Images</strong> digitization file or IIIF link.<br>
+                <strong>Free to use</strong> if the digitization is not restricted by copyright, check the box.<br>
+                <strong>Digitization source</strong> institution managing the digitization.
+                <dd class="small">Multiple digitizations can be added for one witness.</dd>
+            </dd>
+        </dl>
+
+        <h4 class="title">Contents</h4>
+        <img src="images/form_contents.png" class="tutorial" alt="Contents form screenshot"/>
+        <dl>
+            <dd>
+            <strong>Work</strong> work entity. If absent from the list, the work can be created through the work form to input the necessary metadata.<br>
+            <strong>From page/folio - To page/folio</strong> starting and ending points of the work in the witness.<br>
+            <strong>Minimum date - Maximum date</strong> dates of the content.<br>
+            <strong>Creation place</strong> city or country.<br>
+            <strong>Language</strong> language of the work.<br>
+            <strong>Tags</strong> admin defined tags.<br>
+            <strong>Role</strong> actors involved in the creation of the work (author, publisher, illustrator…).
+            </dd>
+        </dl>
+
+        <h3 class="title" id="series">Series</h3>
+        <p class="py-3">
+            A series is a group of witnesses sharing a common coherence, such as volume of an edition or manuscript fragments held in different institutions.
+        </p>
+        <img src="images/form_series.png" class="tutorial" alt="Series form screenshot"/>
+        <dl>
+            <dd>
+                <strong>Work</strong> work common to all witnesses of the series.<br>
+                <strong>Edition</strong> edition common to all witnesses of the series.<br>
+                <strong>Minimum date - Maximum date</strong> dates of the series.<br>
+                <strong>Conservation place</strong> heritage institution preserving the documents.<br>
+                <strong>Additional notes</strong> free text for information with no dedicated field (e.g. previous owner, bibliographical information, etc.)<br>
+                <strong>Make it public</strong> if you check the box, your witness and its information will be made public to the other users.<br>
+                <strong>Role</strong> actors involved in the creation of the work (author, publisher, illustrator…).<br>
+                <strong>Historical actor</strong> person entity.
+            </dd>
+        </dl>
+        <h4 class="title">Volumes</h4>
+        <img src="images/form_volumes.png" class="tutorial" alt="Series form screenshot"/>
+        <dl>
+            <dd>
+                <strong>Volume number</strong> number in the series.<br>
+                <strong>Title of the volume</strong> title of the witness in free text.
+            </dd>
+
+        </dl>
+        <h4 class="title">Digitization</h4>
+        <p class="py-3">
+            See <a href="#digitization">Digitization</a>.
+        </p>
+
+        <h3 class="title" id="work">Work</h3>
+        <p class="py-3">
+            A work is an abstract intellectual production, encompassing its core ideas and content across various manifestations
+        </p>
+        <img src="images/form_work.png" class="tutorial" alt="Series form screenshot"/>
+        <dl>
+            <dd>
+                <strong>Title</strong> title of the work in free text.<br>
+                <strong>Author</strong> person entity.<br>
+                <strong>Minimum date - maximum date</strong> creation dates of the work.<br>
+                <strong>Creation place</strong> city or country.<br>
+                <strong>Additional notes</strong> free text for information with no dedicated field (e.g. previous owner, bibliographical information, etc.)<br>
+                <strong>Language</strong> original language of the work.<br>
+                <strong>Tags</strong> admin defined tags.
+            </dd>
+        </dl>
+    </div>
+    <div class="content">
+        <h2 class="title" id="sets" >Sets and treatments</h2>
+        <h3 class="title" id="document_sets">Document sets</h3>
+        <img src="images/select_witness.png" class="tutorial" alt="Witness selection interface screenshot"/>
+        <p class="py-3">
+            A document set is a personal collection of witnesses, works and series created by a user. Sets can be created by adding objects through the <strong>“Add to selection”</strong> button.<br>
+            Selected documents can be viewed by clicking on the <strong>“Selection”</strong> button.
+        </p>
+        <img src="images/document_set.png" class="tutorial" alt="Document set interface screenshot"/>
+        <p class="py-3">Users can view and edit the selected document in the selection popup, give a title to the selected set and save it. To apply a treatment to the set, click <strong>“Save selection” &gt; “Go to treatment”</strong>.</p>
+
+        <h3 class="title" id="treatments">Treatments</h3>
+        <p class="py-3">Sources can be processed by computer vision algorithm through Treatments. Each Treatment instance represents a task applied to a specific set of documents.</p>
+        <img src="images/treatment.png" class="tutorial" alt="Treatment form screenshot"/>
+        <dl>
+            <dd>
+                <strong>Task type</strong> extraction, similarity, vectorization, etc.<br>
+                <strong>Document set</strong> set of witnesses, series and work to perform task on.<br>
+                <strong>Notify by email</strong> receive an email when task is over.<br>
+                <strong>Settings</strong> models and parameters.
+            </dd>
+        </dl>
+        <img src="images/treatment_status.png" class="tutorial" alt="Treatment tracking interface screenshot"/>
+        <p class="small">The status and results of the treatments can be viewed in the treatment list interface.</p>
+    </div>
+
+    <div class="content">
+        <h2 class="title" id="computer_vision">Computer vision results</h2>
+        <p class="py-3">
+            When selecting a witness, users are directed to a page displaying results from computer vision treatments applied to this witness. These interfaces allow users to edit, correct and download the outputs from the tasks.
+        </p>
+
+        <h3 class="title" id="extraction">Region extraction</h3>
+        <img src="images/goto_editor.png" class="tutorial" alt="Go to editor button screenshot"/>
+        <p class="py-3">
+            If no automatic extraction was run, users can manually annotate regions through the IIIF viewer by clicking <strong>“Manually annotate” > “Go to editor”</strong>.
+        </p>
+        <h4 class="title">All regions</h4>
+        <img src="images/regions.png" class="tutorial" alt="Region extraction interface screenshot"/>
+        <p class="py-3">
+            Users can select regions on the interface and delete them by clicking on the <strong>“Delete selected regions”</strong> button. To add missing regions, users can use the Mirador viewer by clicking <strong>“Go to editor”</strong> and using the rectangle selection tool.
+        </p>
+        <img src="images/viewer.png" class="tutorial" alt="Mirador viewer screenshot"/>
+        <p class="py-3">
+            Users can validate their annotations once they are satisfied with the result, and download region images.
+        </p>
+        <h4 class="title">Per page</h4>
+        <img src="images/per_page.png" class="tutorial" alt="Per page region extraction interface screenshot"/>
+        <p class="py-3">
+            Users can also use the “Per page” view for region annotation with a pagination, with the same functionalities.
+        </p>
+        <h3 class="title" id="similarity">Similarity</h3>
+        <img src="images/similarity.png" class="tutorial" alt="Similarity interface screenshot"/>
+        <p class="py-3">
+            Users can annotate similarity on four different levels:
+        </p>
+            <ul>
+                <li>Exact match</li>
+                <li>Partial match</li>
+                <li>Semantic match</li>
+                <li>No match</li>
+            </ul>
+        <p class="py-3">
+            This annotation is used by the propagation algorithm to propose other similarities in the corpus (ex. if A is similar to B and B to C, A and C is a propagated similarity).<br>
+            Users can add matches they know about by copying the id of the similar region and inputting it in the field below the region image.
+        </p>
+        <img src="images/similarity_toolbar.png" class="tutorial" alt="Similarity toolbar screenshot"/>
+        <p class="py-3">
+            Similarity results can be filtered by score, witness and similarity level in the toolbar.
+        </p>
+        <img src="images/similarity_modal.png" class="tutorial" alt="Similarity modal screenshot"/>
+        <p class="py-3">
+            The detailed view (eye button) allows user to overlay similar images to compare them.
+        </p>
+        <h3 class="title" id="vectorization">Vectorization</h3>
+        <img src="images/vectorization.png" class="tutorial" alt="Vectorization interface screenshot"/>
+        <p class="py-3">
+            Users can download a ZIP containing all vectorized diagrams by clicking <strong>“Download All”</strong>.
+        </p><br><br>
+    </div>
+</div>
+
+
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="../static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="../static/logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2"
+           href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+            <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union's Horizon
+            Europe<br>Research and Innovation program under grant agreement No. 101076028.
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+        });
+    });
+});
+</script>
+</body>
+</html>
