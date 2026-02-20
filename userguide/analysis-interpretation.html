@@ -170,18 +170,24 @@
                         <tbody>
                         <tr>
                             <th>Category</th>
-                            <td><img src="../static/img/no_cat.png" alt="No category" class="cat-icon"
-                                     title="No category"></td>
-                            <td><img src="../static/img/exact_match.png" alt="Exact match" class="cat-icon"
-                                     title="Exact match"></td>
-                            <td><img src="../static/img/partial_match.png" alt="Partial match" class="cat-icon"
-                                     title="Partial match"></td>
-                            <td><img src="../static/img/semantic_match.png" alt="Semantic match" class="cat-icon"
-                                     title="Semantic match"></td>
-                            <td><img src="../static/img/no_match.png" alt="No match" class="cat-icon" title="No match">
+                            <td>
+                                <img src="../static/img/no_cat.png" alt="No category" class="cat-icon" title="No category">
                             </td>
-                            <td><img src="../static/img/user_match.png" alt="User match" class="cat-icon"
-                                     title="User match"></td>
+                            <td>
+                                <img src="../static/img/exact_match.png" alt="Exact match" class="cat-icon" title="Exact match">
+                            </td>
+                            <td>
+                                <img src="../static/img/partial_match.png" alt="Partial match" class="cat-icon" title="Partial match">
+                            </td>
+                            <td>
+                                <img src="../static/img/semantic_match.png" alt="Semantic match" class="cat-icon" title="Semantic match">
+                            </td>
+                            <td>
+                                <img src="../static/img/no_match.png" alt="No match" class="cat-icon" title="No match">
+                            </td>
+                            <td>
+                                <img src="../static/img/user_match.png" alt="User match" class="cat-icon" title="User match">
+                            </td>
                         </tr>
                         <tr>
                             <th>Weight</th>
@@ -202,7 +208,7 @@
                         </li>
                     </ul>
                 </div>
-</details>
+            </details>
         </div>
     </div>
 
@@ -217,7 +223,7 @@
         <iframe src="https://www.youtube.com/embed/aeD1-1rYixo " allowfullscreen>
         </iframe>
 
-        <h3 class="title">Matrix Visualization</h3>
+        <h3 class="title" id="doc-matrix">Matrix Visualization</h3>
         <p>
             The similarity matrix shows pairwise document comparisons.
             Color intensity indicates the number of similar regions between documents.
@@ -274,9 +280,104 @@
 
         <h3 class="title">Stemma editor</h3>
         <p>
-            The stemma editor allows users to try different ways to connect document
-            within the set and test their hypothesis by looking at regions of interest
-            of the documents through several visualization tools.
+            The stemma editor is an exploratory tool for testing hypotheses about document relationships.
+            It allows you to construct a tree of filiation between documents and observe how similar regions
+            propagate through this structure.
+        </p>
+        <p>
+            This tool does not automatically generate a stemma—it helps you visualize the consequences
+            of a proposed transmission model by showing which images would be related under that model.
+        </p>
+
+        <h4 class="title">Stemma builder</h4>
+
+        <p>
+            The right panel displays all documents in the current set as movable nodes.
+            You can arrange them to represent a hypothetical transmission tree.
+        </p>
+
+        <h5 class="title">Building connections</h5>
+        <ul>
+            <li><strong>Create an edge</strong> hold <kbd>Shift</kbd> and drag from one node to another</li>
+            <li><strong>Move a node</strong> drag it to reposition</li>
+            <li><strong>Rename a node</strong> double-click on it</li>
+            <li><strong>Edit or delete an edge</strong> double-click on the arrow</li>
+            <li><strong>Reset layout</strong> use the button in the top-right corner</li>
+        </ul>
+        <p>
+            The structure you build here determines how images will propagate in the visualizations below.
+        </p>
+
+        <h4 class="title">Spatial Frieze</h4>
+
+        <p>
+            The spatial frieze displays all regions extracted from one document (the "base document"),
+            ordered by their position in the source. It reveals where similar regions are concentrated.
+        </p>
+
+        <p>
+            Each vertical position corresponds to a region (or a page, if "By page" is selected).
+            The heatmap below indicates where regions were extracted in the document.
+        </p>
+        <p>
+            Blue lines mark regions that have matches in other documents.
+            The intensity of the blue reflects how many similar regions exist:
+            a darker line means more matches above the current score threshold.
+        </p>
+        <p>
+            You can choose what the frieze compares against:
+        </p>
+        <ul>
+            <li><strong>Selected documents</strong> only documents connected in your stemma</li>
+            <li><strong>Full document set</strong> all documents in the set</li>
+        </ul>
+
+        <h5 class="title">Interactions</h5>
+        <ul>
+            <li><strong>Hover</strong> on a blue line to highlight which documents share similar regions</li>
+            <li><strong>Click</strong> on a document in the list below to make it the new base</li>
+            <li><strong>Click</strong> on a line to place that region in the image stemma</li>
+        </ul>
+
+        <h4 class="title">Image stemma</h4>
+
+        <p>
+            The image stemma mirrors your document stemma, but displays individual regions instead of documents.
+            It shows how a specific image might have been transmitted through your hypothetical tree.
+        </p>
+
+        <h5 class="title">How images are placed</h5>
+        <p>
+            When you click a region in the spatial frieze, the algorithm places it at its document's
+            position in the stemma, then propagates outward to fill neighboring nodes:
+        </p>
+
+        <ol>
+            <li>The selected region is placed at the base document node</li>
+            <li>For each connected document, the algorithm searches for the best matching region
+                (highest weighted score among visible pairs)</li>
+            <li>If a match is found, that region is placed and becomes the new starting point
+                for further propagation</li>
+            <li>If no match exists, the node displays a placeholder—this indicates a "dead end"
+                where the visual chain breaks</li>
+        </ol>
+
+        <div class="notification is-info is-light mb-4 py-3">
+            <strong>Note on circular graphs:</strong> If your stemma contains multiple paths to the same document,
+            the algorithm keeps the match with the highest score. The displayed image may differ
+            depending on which path yields a better match.
+        </div>
+
+         <div class="notification is-warning is-light mb-4 py-3">
+            ⚠️ When the spatial frieze is set to "By page", clicking on a page places only its first
+            extracted region in the image stemma.
+        </div>
+
+        <h4 class="title">Document Matrix</h4>
+
+        <p>
+            The document matrix is a pairwise comparison of all documents in the set.
+            The visualisation logic is the same as the matrix described in the <a href="#doc-matrix">previous section</a>.
         </p>
     </div>
 

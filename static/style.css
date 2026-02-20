@@ -138,6 +138,10 @@ ul {
     list-style: inside;
 }
 
+ol {
+    list-style: decimal inside;
+}
+
 .nav-buttons {
     display: flex;
     justify-content: space-between;
@@ -164,11 +168,17 @@ h4 {
     margin-bottom: 1rem !important;
 }
 
+h5 {
+    font-size: 1rem !important;
+    padding-top: 1.25rem;
+    margin-bottom: 0.25rem !important;
+}
+
 .grey-box h3 {
     padding-top: .25rem !important;
 }
 
-p, ul {
+p, ul, ol {
     padding-bottom: .75rem;
     padding-top: .75rem;
 }
