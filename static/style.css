@@ -146,19 +146,29 @@ ul {
     border-top: 1px solid #eee;
 }
 
-.doc-section h2 {
-    font-size: 1.5rem;
+h2 {
+    font-size: 1.5rem !important;
     padding-top: 1.75rem;
     margin-bottom: 1rem !important;
 }
 
-.doc-section h3 {
-    font-size: 1.25rem;
+h3 {
+    font-size: 1.25rem !important;
     padding-top: 1.75rem;
     margin-bottom: 1rem !important;
 }
 
-.doc-section p, ul {
+h4 {
+    font-size: 1.125rem !important;
+    padding-top: 1.5rem;
+    margin-bottom: 1rem !important;
+}
+
+.grey-box h3 {
+    padding-top: .25rem !important;
+}
+
+p, ul {
     padding-bottom: .75rem;
     padding-top: .75rem;
 }
@@ -166,6 +176,11 @@ ul {
 iframe {
     min-height: 350px;
     width: 100%;
+}
+
+.cat-icon {
+    height: 2em;
+    padding: 0 1em;
 }
 
 @media (max-width: 768px) {

@@ -10,6 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
 </head>
 
 <body data-theme="light">
@@ -63,10 +64,12 @@
 
     <div class="doc-section" id="set-level">
         <h2 class="title">Set-Level Visualizations</h2>
-        <p class="pb-3">
+        <p>
             Document set views aggregate similarity data across multiple witnesses.
             These interactive visualizations help identify document relationships.
         </p>
+
+        <img src="../static/img/document-set-list.png" alt="Document set interface">
 
         <!--Document set visualisations-->
         <iframe src="https://www.youtube.com/embed/V1WtQq6GwjI" allowfullscreen>
@@ -74,26 +77,152 @@
 
         <p>
             All visualisations rely on the same underlying data: each document holds a number of extracted image regions,
-            and each region is linked to a number of similar regions in other documents. This link is stored as a pair
-            of images, associated with a similarity score and a category.
+            and each region is linked to a number of similar regions in other documents.
         </p>
 
-        <img src="../static/img/document-set-list.png" alt="Document set interface">
+        <p>
+            This link is stored as a pair of images, associated with an automatic similarity score,
+            a user-defined category and information on the algorithm used to compute the score.
+        </p>
+
+        <img src="../static/img/RegionPair.png" alt="Region pair data model" style="width: 65%">
 
         <h3 class="title">Filtering Options</h3>
         <p>
             All visualizations support filtering using sidebar controls:
         </p>
         <ul>
-            <li><strong>Document</strong>: Filter by document to focus on specific witnesses</li>
-            <li><strong>Category</strong>: Filter by similarity category (exact, partial, semantic)</li>
-            <li><strong>Score</strong>: Adjust score thresholds to show only high-confidence matches</li>
+            <li><strong>Document</strong> Filter by document to focus on specific witnesses</li>
+            <li><strong>Category</strong> Filter by similarity category (exact, partial, semantic, etc.)</li>
+            <li><strong>Score</strong> Adjust score thresholds to show only high-confidence matches</li>
         </ul>
-<!--        <p>-->
-<!--            Pairs can be filtered by score using two methods:-->
-<!--            - Score threshold: pairs-->
-<!--        </p>-->
 
+    </div>
+
+    <div class="columns is-desktop">
+        <div class="column is-half">
+            <img src="../static/img/docset-sidebar.png" alt="Sidebar of document set view">
+        </div>
+
+        <div class="column">
+            <details class="accordion" open>
+                <summary class="title is-5">Category filtering</summary>
+                <div class="accordion-content">
+                    <p>
+                        Categories represent user-defined labels assigned to pairs to qualify the type of similarity they represent.
+                        By default, only pairs categorized as exact match are shown in the visualizations.
+                    </p>
+
+                    <p>
+                        To optimize visualization performance, each time the user changes its category selection,
+                        a new request to the backend is made: the initial load when clicking on "All pairs" can
+                        therefore take a few moments.
+                    </p>
+
+                    <p>
+                        ⚠️ We recommend not changing too often the category selection to avoid too many requests and long loading times.
+                    </p>
+                </div>
+            </details>
+
+            <details class="accordion">
+                <summary class="title is-5">Document filtering</summary>
+                <div class="accordion-content">
+                    <p>
+                        A document set is a collection of series, works and witnesses.
+                        Each series, work is linked to a number of witnesses, itself linked to a number of digitizations.
+                        In the document set view, we visualize only the pairs of images extracted from these
+                        digitizations.
+                    </p>
+
+                    <p>
+                        The legend in the "Visible documents" section shows all the digitizations of the current document set.
+                        Therefore, one witness can be represented by several color dots if it has several digitizations.
+                        The number of images extracted from a digitization is indicated by the grey number at the end of
+                        the line legend.
+                    </p>
+
+                    <p>
+                        The legend displays only digitizations present in the "available pairs":
+                        if you change your category selection, new dots might appear unselected in the legend.
+                        To select them at once, click on the "Select all" button.
+                    </p>
+
+                    <p>
+                        By clicking on the colored dot of a digitization, you can hide or show pairs that contain an
+                        image from this digitization.
+                    </p>
+
+                    <p>
+                        Legend can be reduced to only show color dots by clicking on the small up bracket on top of the section.
+                        You can also reorder the legend using a number of sorting options (by title, by witness, by id number).
+                    </p>
+                </div>
+            </details>
+
+            <details class="accordion">
+                <summary class="title is-5">Score filtering</summary>
+                <div class="accordion-content">
+                    <p>
+                        Each pair is attributed a "weighted score": it takes into account the computed similarity score and the category of the pair.
+
+                        <!--transform into latex formula + make more mathy and less cody-->
+                        base_score = computed_score or category_weight
+                        weighted_score = max(0,01, base_score + base_score * category_weight)
+                    </p>
+                    <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>Category</th>
+                                <td>
+                                    <img src="../static/img/no_cat.png" alt="No category icon" class="cat-icon" title="No category">
+                                </td>
+                                <td>
+                                    <img src="../static/img/exact_match.png" alt="Exact match category icon" class="cat-icon" title="Exact match">
+                                </td>
+                                <td>
+                                    <img src="../static/img/partial_match.png" alt="Partial match category icon" class="cat-icon" title="Partial match">
+                                </td>
+                                <td>
+                                    <img src="../static/img/semantic_match.png" alt="Semantic match category icon" class="cat-icon" title="Semantic match">
+                                </td>
+                                <td>
+                                    <img src="../static/img/no_match.png" alt="No match category icon" class="cat-icon" title="No match">
+                                </td>
+                                <td>
+                                    <img src="../static/img/user_match.png" alt="User match category icon" class="cat-icon" title="User match">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Weight</th>
+                                <td>0</td>
+                                <td>1.0</td>
+                                <td>0.5</td>
+                                <td>0.125</td>
+                                <td>-1.0</td>
+                                <td>0.125</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    <p>
+                        The interface offers two ways to filter pairs based on their weighted score:
+                    </p>
+                    <ul>
+                        <li><strong>Score threshold</strong> Adjust the slider to set a minimum score threshold. Only pairs with a weighted score above this threshold will be displayed.</li>
+                        <li><strong>Top K pairs</strong> Filter the pairs that are not best matches</li>
+                    </ul>
+
+                    <p>
+                        <strong>Top K pairs</strong> filter allows to keep only the best K matches for each image.
+                        If the slider is set to 1, only the pair that holds the highest weighted score for this image is shown.
+                        If the "Mutual top K" is selected, only pairs that are in the top K of both images are shown.
+                    </p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <div class="doc-section">
         <h3 class="title">Clusters</h3>
         <p>
             Document set clusters group images that are linked by at least on pair
@@ -145,9 +274,9 @@
         <img src="../static/img/image-network.png" alt="Graph visualization of region similarities">
 
         <ul>
-            <li><strong>Node size:</strong> proportional to the number of connections</li>
-            <li><strong>Edge width:</strong> reflects similarity score (when available)</li>
-            <li><strong>Selection:</strong> click nodes to view images and metadata</li>
+            <li><strong>Node size</strong> proportional to the number of connections</li>
+            <li><strong>Edge width</strong> reflects similarity score (when available)</li>
+            <li><strong>Selection</strong> click nodes to view images and metadata</li>
         </ul>
 
         <p class="pb-3">
@@ -212,17 +341,15 @@
 </footer>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    $navbarBurgers.forEach(el => {
-        el.addEventListener('click', () => {
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
+    document.querySelectorAll('details.accordion').forEach(detail => {
+        detail.addEventListener('toggle', () => {
+            if (detail.open) {
+                document.querySelectorAll('details.accordion').forEach(other => {
+                    if (other !== detail) other.removeAttribute('open');
+                });
+            }
         });
     });
-});
 </script>
 </body>
 </html>
