@@ -322,7 +322,7 @@
         <p>
             Blue lines mark regions that have matches in other documents.
             The intensity of the blue reflects how many similar regions exist:
-            a darker line means more matches above the current score threshold.
+            a bluer line means more matches above the current score threshold.
         </p>
         <p>
             You can choose what the frieze compares against:
@@ -342,7 +342,7 @@
         <h4 class="title">Image stemma</h4>
 
         <p>
-            The image stemma mirrors your document stemma, but displays individual regions instead of documents.
+            The image stemma mirrors your document stemma, but displays individual images instead of documents.
             It shows how a specific image might have been transmitted through your hypothetical tree.
         </p>
 
@@ -355,15 +355,15 @@
         <ol>
             <li>The selected region is placed at the base document node</li>
             <li>For each connected document, the algorithm searches for the best matching region
-                (highest weighted score among visible pairs)</li>
+                (highest score among visible pairs)</li>
             <li>If a match is found, that region is placed and becomes the new starting point
                 for further propagation</li>
-            <li>If no match exists, the node displays a placeholder—this indicates a "dead end"
+            <li>If no match exists, the node displays a placeholder; this indicates a "dead end"
                 where the visual chain breaks</li>
         </ol>
 
         <div class="notification is-info is-light mb-4 py-3">
-            <strong>Note on circular graphs:</strong> If your stemma contains multiple paths to the same document,
+            <strong>Note on circular graphs</strong> If your stemma contains multiple paths to the same document,
             the algorithm keeps the match with the highest score. The displayed image may differ
             depending on which path yields a better match.
         </div>
