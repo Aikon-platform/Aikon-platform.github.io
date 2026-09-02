@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="../static/style.css">
     <script src="../static/script.js"></script>
+    <script defer src="../static/zoom.js"></script>
 </head>
 
 <body data-theme="light">
@@ -86,6 +87,22 @@
             <li><strong>3</strong> Stamp</li>
             <li><strong>4</strong> Table</li>
         </ul>
+        <h2 class="title" id="resources">Resources</h2>
+        <p>
+            The corpus annotated with these guidelines, and the detection model trained on it, are both openly
+            available:
+        </p>
+        <div class="boxes">
+            <a class="grey-box" href="https://huggingface.co/datasets/Anarchiviste/GenHisDoc_dataset/tree/main">
+                <h3 class="title is-6">GenHisDoc dataset</h3>
+                <p>Annotated pages of historical documents, labelled with the 5 classes defined in this guide.</p>
+            </a>
+            <a class="grey-box" href="https://huggingface.co/Anarchiviste/GenHisDoc_model">
+                <h3 class="title is-6">GenHisDoc model</h3>
+                <p>Multi-class object detection model trained on the dataset above.</p>
+            </a>
+        </div>
+
         <p>
             Each class is described in detail, with rules and edge cases, in the
             <a href="classes.html">class definition</a> section.
@@ -93,9 +110,9 @@
     </div>
 
     <div class="nav-buttons">
-        <a href="index.html" class="button">
+        <a href="../index.html" class="button">
             <span class="mt-1"><i class="fas fa-arrow-left"></i></span>
-            <span class="txt pl-3">Annotation guide</span>
+            <span class="txt pl-3">Documentation</span>
         </a>
         <a href="rules.html" class="button is-link">
             <span class="txt pr-3">General rules</span>
