@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>General rules - Annotation Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data labelling guide for historical corpora annotation - General rules">
+    <link rel="icon" type="image/png" href="../static/img/favicon.png"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+
+<body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+            <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">Annotation guide</a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="annotation-introduction.html">Introduction</a>
+                    <a class="navbar-item" href="annotation-rules.html">General rules</a>
+                    <a class="navbar-item" href="annotation-classes.html">Class definition</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="title is-3 mt-5">General rules</h1>
+
+    <blockquote>
+        Here are some general rules of good practice for your work.
+    </blockquote>
+
+    <div class="doc-section">
+        <h2 class="title" id="tight-fit">Hug the border of the object as tightly as possible</h2>
+        <p>
+            A precise annotation like the one shown in <a href="#fig-1">Figure 1b</a> captures the entire visual element
+            and is as close as possible to the boundaries, to reduce confusion for the machine learning model.
+        </p>
+
+        <div class="columns is-desktop" id="fig-1">
+            <div class="column is-half" id="fig-badfit">
+                <img src="./images/bad_fitting.png" alt="Annotation box far too large around the element">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> <i class="fas fa-times has-text-danger"></i>
+                    Here, the annotation is too large.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-goodfit">
+                <img src="./images/good_fitting.png" alt="Annotation box tightly fitted to the element">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> <i class="fas fa-check has-text-success"></i>
+                    Here is the correct way to annotate an element: the borders are close to the end of the element
+                    without cutting it.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 1.</strong> Hug the border of the object as tightly as possible.
+        </p>
+
+        <h2 class="title" id="separate-elements">Separate the elements that are not visually connected</h2>
+        <p>
+            Each distinct visual element must receive its own annotation (bounding box), even if several elements appear
+            to form a coherent whole from the point of view of meaning or composition intended by the author of the
+            document, as seen in <a href="#fig-2">Figure 2</a>.
+        </p>
+        <p>
+            Two elements can be "linked" in the author's intention (for example, a human figure and a dog figure
+            accompanying it, or related but non-touching ornamentation) without being visually connected, that is,
+            without sharing a common background, frame, or direct contact. In this case, the annotations are separate.
+        </p>
+        <p>
+            If several elements share the same background or frame (for example, several symbols or drawings printed on
+            a single continuous graphic strip), they can be grouped into a single annotation, because they are
+            physically or visually unified on the medium, as seen in
+            <a href="annotation-classes.html#fig-2">Figure 2 of the class definition</a>.
+        </p>
+
+        <div class="columns is-desktop" id="fig-2">
+            <div class="column is-half" id="fig-unification">
+                <img src="./images/unification.png" alt="Several elements enclosed in a single annotation">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> <i class="fas fa-times has-text-danger"></i>
+                    These elements, although clearly grouped together by the author, should not be annotated in this way.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-separation">
+                <img src="./images/separation.png" alt="Each element with its own annotation">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> <i class="fas fa-check has-text-success"></i>
+                    Here is how we want to annotate several elements.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 2.</strong> Separate elements that are not visually linked.
+        </p>
+
+        <h2 class="title" id="avoid-overlap">Avoid item overlap</h2>
+        <div class="notification is-info is-light mb-4 py-3">
+            <strong>This is not a strict rule.</strong> In many documents, elements overlap and are interconnected, as
+            illustrated in <a href="#fig-good-overlap">Figure 3b</a>. The
+            <a href="annotation-classes.html">class definition</a> section shows the cases where overlapping
+            annotations are necessary and those where they can be avoided.
+        </div>
+
+        <div class="columns is-desktop" id="fig-3">
+            <div class="column is-half" id="fig-bad-overlap">
+                <img src="./images/overlap.png" alt="Ornament annotation overlapping many other elements">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> <i class="fas fa-times has-text-danger"></i>
+                    The annotation of the ornament overlaps too many elements.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-good-overlap">
+                <img src="./images/correct_overlap.png" alt="Decorative elements cut into separate annotations">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> <i class="fas fa-check has-text-success"></i>
+                    We decided to cut out the decorative elements to avoid overlapping.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 3.</strong> Avoid item overlap between classes.
+        </p>
+
+        <h2 class="title" id="main-page">Annotate only the main page</h2>
+        <p>
+            Do not annotate anything that is not on the main page, as shown in
+            <a href="#fig-main-page">Figure 4a</a>. If the scan was done for two pages, annotate it as shown in
+            <a href="#fig-both-page">Figure 4b</a>.
+        </p>
+
+        <div class="columns is-desktop" id="fig-4">
+            <div class="column is-half" id="fig-main-page">
+                <img src="./images/Screenshot_20260702_112821.png"
+                     alt="Scan showing a sliver of the facing page, left unannotated">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> Do not annotate the tables on the little bit of the other page.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-both-page">
+                <img src="./images/Screenshot_20260702_135302_2.png" alt="Two-page scan with both pages annotated">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> If the scan is done for two pages, then you must annotate the elements of both
+                    pages.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 4.</strong> Annotate only the main page.
+        </p>
+
+        <h2 class="title" id="visible-only">Annotate what is visible, not what you infer</h2>
+        <p>
+            Label only the content that is actually present and legible in the document, as shown in
+            <a href="#fig-5">Figure 5</a>. Do not extend a bounding box or complete an area based on what you assume to
+            be there (for example, a torn page, an erased stamp, text hidden by a fold).
+        </p>
+
+        <div class="columns is-desktop" id="fig-5">
+            <div class="column is-half" id="fig-completion">
+                <img src="./images/tomuch.png" alt="Annotation extended over a missing part of the element">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> <i class="fas fa-times has-text-danger"></i>
+                    This annotation attempts to complete an element that is no longer visible.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-fitting">
+                <img src="./images/correct_amount.png" alt="Annotation limited to the visible part of the element">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> <i class="fas fa-check has-text-success"></i>
+                    This annotation respects the limits of what is visible in the document.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 5.</strong> Annotate what is visible, not what you infer.
+        </p>
+
+        <h2 class="title" id="review">Review your work before submitting</h2>
+        <p>
+            The annotation task can be arduous and tedious; it is advisable to check the quality of the annotations
+            before moving on to the next image, and to take regular breaks to stay alert and focused.
+        </p>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="annotation-introduction.html" class="button">
+            <span class="mt-1"><i class="fas fa-arrow-left"></i></span>
+            <span class="txt pl-3">Introduction</span>
+        </a>
+        <a href="annotation-classes.html" class="button is-link">
+            <span class="txt pr-3">Class definition</span>
+            <span class="mt-1"><i class="fas fa-arrow-right"></i></span>
+        </a>
+    </div>
+</div>
+
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="../static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="../static/logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2"
+           href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+            <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union's Horizon
+            Europe<br>Research and Innovation program under grant agreement No. 101076028.
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Introduction - Annotation Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data labelling guide for historical corpora annotation - Introduction">
+    <link rel="icon" type="image/png" href="../static/img/favicon.png"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+
+<body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+            <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">Annotation guide</a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="index.html">Introduction</a>
+                    <a class="navbar-item" href="rules.html">General rules</a>
+                    <a class="navbar-item" href="classes.html">Class definition</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="title is-3 mt-5">Introduction</h1>
+
+    <blockquote>
+        Welcome to this data labelling guide for historical corpora annotation. This document provides the information
+        and context necessary for your work as an annotator. It is available to you throughout your assignment and you
+        should refer to it if you have any questions.
+    </blockquote>
+
+    <div class="doc-section">
+        <p>
+            We want to produce annotations to train a model to detect different types of content in historical
+            documents. To train the model, the annotations must be as consistent as possible.
+        </p>
+
+        <h2 class="title" id="context">Context</h2>
+        <p>
+            Our goal is to create an automated system for extracting visual elements using machine learning technology.
+            For this, we need high-quality data, annotated and manually corrected by human hands.
+        </p>
+        <p>
+            We are currently working on a study of the dissemination of texts by studying images. In this project, we
+            are only interested in the visual elements and we will completely disregard text.
+        </p>
+        <p>
+            The page of a historical document is composed of text, illustrations, ornaments and other elements added
+            after the creation of the object, such as glosses, comments, stamps, drawings and traces of wear.
+        </p>
+
+        <h2 class="title" id="task-definition">Task Definition</h2>
+        <p>
+            You are an annotator and your goal is to annotate the visual elements of the page. To do this, you will draw
+            straight rectangles around the elements that have a label. The 5 labelling tags are the following:
+        </p>
+        <ul>
+            <li><strong>0</strong> Illustration</li>
+            <li><strong>1</strong> Ornament</li>
+            <li><strong>2</strong> Initial</li>
+            <li><strong>3</strong> Stamp</li>
+            <li><strong>4</strong> Table</li>
+        </ul>
+        <p>
+            Each class is described in detail, with rules and edge cases, in the
+            <a href="classes.html">class definition</a> section.
+        </p>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="index.html" class="button">
+            <span class="mt-1"><i class="fas fa-arrow-left"></i></span>
+            <span class="txt pl-3">Annotation guide</span>
+        </a>
+        <a href="rules.html" class="button is-link">
+            <span class="txt pr-3">General rules</span>
+            <span class="mt-1"><i class="fas fa-arrow-right"></i></span>
+        </a>
+    </div>
+</div>
+
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="../static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="../static/logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2"
+           href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+            <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union's Horizon
+            Europe<br>Research and Innovation program under grant agreement No. 101076028.
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Class definition - Annotation Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data labelling guide for historical corpora annotation - Class definition">
+    <link rel="icon" type="image/png" href="../static/img/favicon.png"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js"></script>
+</head>
+
+<body data-theme="light">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+            <img src="../static/img/favicon.png" alt="AIKON logo" style="height: 28px;">
+            <span class="ml-2 has-text-weight-semibold">AIKON</span>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="index.html">Annotation guide</a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="index.html.html">Introduction</a>
+                    <a class="navbar-item" href="rules.html">General rules</a>
+                    <a class="navbar-item" href="classes.html">Class definition</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="title is-3 mt-5">Class definition</h1>
+
+    <blockquote>
+        You will be annotating the corpus of documents with 5 classes describing the elements found inside historical
+        documents: illustration, ornament, initial, stamp and table.
+    </blockquote>
+
+    <div class="doc-section" id="illustration">
+        <h2 class="title">Illustration</h2>
+
+        <h3 class="title">Description</h3>
+        <p>
+            The class "illustration" should be understood as a generic class encompassing all graphic elements. An
+            illustration can be functional or artistic; its function is then to inform, illustrate, or entertain the
+            reader.
+        </p>
+        <p>
+            Examples of illustrations within an image include paintings, photographs, drawings, mathematical graphs,
+            charts, diagrams, symbols, and maps. What distinguishes an illustration from an ornament is its own
+            semantics: it has a meaning that is interpreted in relation to the text, unlike an ornament which is purely
+            decorative.
+        </p>
+
+        <div class="columns is-desktop is-multiline" id="fig-1">
+            <div class="column is-half">
+                <img src="./images/illustraiton_4.png" alt="Geometry manuscript with angle calculations">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> A geometry manuscript that illustrates angle calculations.
+                </p>
+            </div>
+            <div class="column is-half">
+                <img src="./images/illustration_2.png" alt="Handwritten bestiary with a snake illustration">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> A handwritten bestiary with an illustration of a snake.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-manuscript-bookofhours">
+                <img src="./images/illustration_3.png" alt="Book of hours with illustration and floral ornamentation">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(c)</strong> A handwritten book of hours with an illustration amidst floral ornamentation.
+                </p>
+            </div>
+            <div class="column is-half">
+                <img src="./images/ilustration_5.png" alt="Astronomy manuscript with mathematical diagrams">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(d)</strong> An astronomy manuscript with mathematical diagrams.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 1.</strong> Illustration examples.
+        </p>
+
+        <h3 class="title">Rules</h3>
+        <p>
+            The annotation of illustrations can be affected by the layout of the page: they can be grouped, and it is
+            hard to understand which ones need to be annotated alone and which ones need to be annotated together.
+        </p>
+        <ul>
+            <li><strong>Is there a frame around multiple illustrations?</strong> Illustrations in a frame belong
+                together and need to be annotated accordingly. The bounding box must be drawn around the limits of the
+                frame. As shown in <a href="rules.html#fig-separation">Figure 2b of the general rules</a> and
+                in <a href="#fig-example-illustration-frame">Figure 2a</a> below, a grouped illustration without a frame
+                should be separated into multiple annotations.
+            </li>
+            <li><strong>Is there a common background?</strong> If illustrations share a visual element between them,
+                they need to be annotated together.
+            </li>
+            <li><strong>Do the illustrations touch?</strong> If illustrations touch each other, they need to be
+                annotated together.
+            </li>
+        </ul>
+
+        <div class="columns is-desktop" id="fig-2">
+            <div class="column is-half" id="fig-example-illustration-frame">
+                <img src="./images/sepsepsep.png" alt="Two touching illustrations sharing a frame, annotated together">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> Two illustrations annotated together because they touch and share the same
+                    frame.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-example-illustration-frame-rule">
+                <img src="./images/illustration_frame_rule.png"
+                     alt="Two separate illustrations sharing a frame, annotated together">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> Two illustrations (red) that do not touch but are annotated together because
+                    they share a frame.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 2.</strong> Edge cases for illustrations.
+        </p>
+
+        <h3 class="title">Edge cases</h3>
+        <ul>
+            <li><strong>Printer's mark</strong> A printer's mark is a symbol that was used as a trademark by early
+                printers starting in the 15th century. Printers' marks are often placed on the title page, just below
+                the title and the author's name. The printer's mark should be annotated as an illustration; see
+                <a href="#fig-3">Figure 3</a>.
+            </li>
+            <li><strong>Illustration and ornamentation</strong> will often be combined into a complex visual element. If
+                a visual element is composed of an illustration and an ornamentation, the annotator should separate
+                these elements; see <a href="#fig-manuscript-bookofhours">Figure 1c</a>,
+                <a href="#fig-illustration-ornamentation-initial">Figure 4a</a> and
+                <a href="#fig-illustration-ornamented-frame">Figure 4b</a>.
+            </li>
+        </ul>
+
+        <div id="fig-3">
+            <img src="./images/printer_mark.png" alt="Printer's mark on a title page">
+            <p class="is-size-7 has-text-grey has-text-centered pb-3">
+                <strong>Figure 3.</strong> A printer's mark on a title page.
+            </p>
+        </div>
+
+        <div class="columns is-desktop" id="fig-4">
+            <div class="column is-half" id="fig-illustration-ornamentation-initial">
+                <img src="./images/illustration_initial_ornamentation.png"
+                     alt="Manuscript with illustration, initial and ornamentation annotated separately">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> A manuscript that shows how to annotate illustration and ornamentation.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-illustration-ornamented-frame">
+                <img src="./images/ornamentation_illustration.png" alt="Illustration surrounded by an ornamented frame">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> An illustration with an ornamented frame around it.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 4.</strong> Illustration and ornament relationships.
+        </p>
+    </div>
+
+    <div class="doc-section" id="ornament">
+        <h2 class="title">Ornament</h2>
+
+        <h3 class="title">Description</h3>
+        <p>
+            An ornament is a graphic element that decorates or embellishes a document without adding informational
+            value.
+        </p>
+        <p>
+            An ornament is most often an abstract form of illustration, composed of classical patterns (plant ornaments,
+            abstract headpieces, "cul-de-lampe") or repetitive motifs with no meaning other than their intrinsic value
+            as ornaments.
+        </p>
+
+        <h3 class="title">Rules &amp; edge cases</h3>
+        <p>
+            Annotating ornaments is inherently complex, because they frequently interact with and wrap around other
+            elements on the page. Therefore, most ornaments cannot be annotated with a single bounding box. Instead,
+            when an ornament wraps around a visual element (an illustration, a table, a block of text, etc.), it must be
+            <strong>split into several separate boxes</strong> that follow the contour of the underlying element, rather
+            than being enclosed in one large box that also captures unrelated content.
+        </p>
+        <p>The following rules apply:</p>
+        <ul>
+            <li><strong>Typographic elements for page organization</strong> (strokes, bold lines, a simple line or a
+                separator with no complex interaction with the page content) should <strong>not</strong> be annotated at
+                all.
+            </li>
+            <li><strong>Text inside an ornament</strong> is irrelevant to the annotation. In some manuscripts, there is
+                sometimes text within an ornamental design. Since we are not taking the text into account, these
+                elements must be annotated as ornaments normally. Whether or not text appears within the ornamented area
+                does not change how the ornament itself is annotated; see <a href="#fig-ornament-text">Figure 5b</a>.
+            </li>
+            <li><strong>Ornaments wrapping around another element</strong> must be cut into multiple pieces that follow
+                the shape of that element, instead of a single bounding box; see
+                <a href="#fig-ornament-1">Figure 5a</a>.
+            </li>
+            <li><strong>Linked/split pieces</strong> resulting from such a cut must be marked with an overlap so that
+                they can later be reconstructed into a single logical ornament; see
+                <a href="#fig-ornament-overlap">Figure 5c</a>.
+            </li>
+            <li><strong>Ornaments used as separators</strong>, for instance to delimit illustrations or tables from one
+                another, should be annotated as ornaments in their own right; see
+                <a href="#fig-ornament-tables">Figure 5d</a>.
+            </li>
+        </ul>
+
+        <div class="columns is-desktop is-multiline" id="fig-5">
+            <div class="column is-half" id="fig-ornament-1">
+                <img src="./images/ornament.png" alt="Ornament annotations split into several boxes">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> Example of ornament annotations.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-ornament-text">
+                <img src="./images/ornament_2.png" alt="Ornament containing text, annotated as a whole">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> We do not care if there is text inside the ornamentation.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-ornament-overlap">
+                <img src="./images/ornament_3.png" alt="Split ornament pieces marked with overlapping boxes">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(c)</strong> When cutting out ornamentation, pieces that are linked together should be
+                    marked with overlaps so that they can be reconstructed later.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-ornament-tables">
+                <img src="./images/ornament_4.png" alt="Ornament used as a separator between elements">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(d)</strong> Ornamentation can be used to separate elements like illustrations or tables.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-ornament-end-of-line">
+                <img src="./images/ornament_end_of_line.png" alt="Ornamented end of line in a manuscript">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(e)</strong> In manuscripts, the end of a line can be ornamented.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 5.</strong> Ornament examples.
+        </p>
+    </div>
+
+    <div class="doc-section" id="initial">
+        <h2 class="title">Initial</h2>
+
+        <h3 class="title">Description</h3>
+        <p>
+            In a written or manuscript work, an initial is a letter at the beginning of a word, a chapter, or a
+            paragraph that is larger than the rest of the text. An initial is often several lines in height and, in
+            older books or manuscripts, may take the form of a historiated initial.
+        </p>
+
+        <div class="columns is-desktop is-multiline" id="fig-6">
+            <div class="column is-half" id="fig-initial-1">
+                <img src="./images/initial.png" alt="Examples of annotated initials">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> Example of initial annotations.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-initial-ornament">
+                <img src="./images/lettrine_ornament.png" alt="Initial letter together with marginal ornamentation">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> Example of the relationship between the initial letter and the ornamentation,
+                    and how to annotate them.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-printed-pilcrow">
+                <img src="./images/pilcrown_printed.png" alt="Printed pilcrow sign">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(c)</strong> Example of a printed pilcrow (¶).
+                </p>
+            </div>
+            <div class="column is-half" id="fig-manuscript-pilcrow">
+                <img src="./images/manuscript_pilcrow.jpg" alt="Manuscript pilcrow sign in red ink">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(d)</strong> Example of a manuscript pilcrow (¶).
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 6.</strong> Examples of initials.
+        </p>
+
+        <h3 class="title">Rules</h3>
+        <p>
+            An initial is annotated as such only if it is <strong>visually distinguishable from the body text</strong>,
+            typically by a significantly larger size (spanning at least two lines of the surrounding text), a different
+            script, colour, or decorative treatment. A letter that is only slightly enlarged compared to the running
+            text should not be annotated as an initial; see
+            <a href="rules.html#fig-both-page">Figure 4b of the general rules</a>.
+        </p>
+
+        <h3 class="title">Edge cases</h3>
+        <p>Initials are letters and therefore can be tricky to annotate due to their textual nature.</p>
+        <ul>
+            <li><strong>An initial letter can be used in manuscripts as a basis for marginal ornamentation.</strong> We
+                annotate the initial letter in a "cautious" manner, limiting ourselves to the actual initial letter, and
+                we annotate the rest of the ornamentation using the ornament class; see
+                <a href="rules.html#fig-main-page">Figure 4a of the general rules</a> and
+                <a href="#fig-illustration-ornamentation-initial">Figure 4a</a>.
+            </li>
+            <li><strong>Initial capitals can be confused with the paragraph mark (pilcrow ¶)</strong> frequently used in
+                manuscripts. Often written in ink of a different colour than the text (red), the pilcrow should not be
+                annotated like an initial capital; see <a href="#fig-printed-pilcrow">Figure 6c</a> and
+                <a href="#fig-manuscript-pilcrow">Figure 6d</a>.
+            </li>
+        </ul>
+    </div>
+
+    <div class="doc-section" id="stamp">
+        <h2 class="title">Stamp</h2>
+        <p>
+            Stamps are marks that identify the institutions that hold or held the documents (libraries, archives). These
+            markings are not all the same, depending on the document and the date they were applied to the work. For
+            bound documents (books, manuscripts, albums), the stamp is on the first page. For a stack of unbound
+            documents, each loose page will be stamped.
+        </p>
+
+        <div class="columns is-desktop is-multiline" id="fig-7">
+            <div class="column is-half" id="fig-stamp-ex-libris">
+                <img src="./images/stamp_ex_libris.png" alt="Stamp covering an older handwritten ex-libris">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> Example of a stamp covering an old bookplate.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-stamp-1">
+                <img src="./images/stamps.png" alt="Stamp on a title page">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> Example of a stamp on a title page.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-stamp-2">
+                <img src="./images/stamps_2.png" alt="Stamp on a first page">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(c)</strong> Example of a stamp on a first page.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-label">
+                <img src="./images/library_stamp.png" alt="Library label pasted in a book">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(d)</strong> Example of a library label.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 7.</strong> Examples of stamps and library labels.
+        </p>
+
+        <h3 class="title">Rules</h3>
+        <ul>
+            <li><strong>Annotate all visible stamps.</strong> Manuscripts and old books in France have moved between
+                several libraries and therefore often have several stamps, which all need to be annotated; see
+                <a href="#fig-stamp-1">Figure 7b</a> and <a href="#fig-stamp-2">Figure 7c</a>.
+            </li>
+            <li><strong>Ex-libris.</strong> Before the widespread use of the stamp, book owners used a handwritten
+                ex-libris on the title page; this phrase should not be annotated as a stamp even if it serves the same
+                purpose; see <a href="#fig-stamp-ex-libris">Figure 7a</a>.
+            </li>
+            <li>In addition to library stamps, the stamp class is also used to annotate library labels; see
+                <a href="#fig-label">Figure 7d</a>.
+            </li>
+        </ul>
+    </div>
+
+    <div class="doc-section" id="table">
+        <h2 class="title">Table</h2>
+        <p>
+            A table is an arrangement of information or data, usually in rows and columns, or possibly according to a
+            more complex structure. For tables, the header and the footer must be included in the annotation if they are
+            present.
+        </p>
+
+        <h3 class="title">Rules</h3>
+        <ul>
+            <li><strong>The bounding box must include the entire table structure</strong>, including the
+                <strong>header and footer</strong> rows if present, as well as any surrounding <strong>border or
+                frame</strong> that is part of the table itself; see
+                <a href="#fig-tabula-with-title">Figure 8a</a>.
+            </li>
+            <li>If the table has a <strong>title or caption</strong> that is graphically separated from the table body
+                (e.g. placed above or below it, not enclosed by the table's border), it should <strong>not</strong> be
+                included in the annotation; only the tabular structure itself is annotated; see
+                <a href="#fig-tabula-initial">Figure 8e</a>.
+            </li>
+            <li>Tables with a <strong>non-rectangular or non-linear structure</strong> (e.g. circular tables, radial
+                diagrams used to present structured information such as genealogies or calendars) must still be
+                annotated as tables, using a bounding box that encloses the full extent of the structure.
+            </li>
+            <li>If a page contains <strong>several distinct tables</strong> (not visually merged and separated by clear
+                spacing, text, or ornamentation), each table should be annotated separately, even if they share the same
+                overall topic or are placed side by side; see <a href="#fig-tabula-ornement">Figure 8d</a>.
+            </li>
+            <li>If a table is <strong>split across a page break or a column break</strong> but is visually one
+                continuous table (repeated headers, continued numbering, etc.), each visible portion is annotated as a
+                separate instance, since annotation is done per visible bounding region.
+            </li>
+        </ul>
+
+        <h3 class="title">Edge cases</h3>
+        <ul>
+            <li><strong>Tables can be difficult to distinguish from simple lists or aligned text</strong> (e.g. an
+                index, a table of contents, or enumerated items with aligned page numbers). A table should only be
+                annotated when there is a clear multi-column/multi-row structure with at least two dimensions of
+                organization; a single column of aligned entries should not be annotated as a table.
+            </li>
+            <li><strong>Tables can be enclosed or decorated with ornamentation</strong> (borders, frames, or historiated
+                elements). In this case, only the tabular content and its structural border are annotated as a table;
+                any additional decorative ornamentation surrounding it should be annotated separately using the ornament
+                class, following the same logic as for illustrations (see the <a href="#ornament">ornament
+                section</a>).
+            </li>
+            <li><strong>Tables with a circular or radial representation</strong> of information (frequent in historical
+                documents, e.g. astronomical or genealogical diagrams) should be annotated as tables rather than as
+                illustrations, even though they may visually resemble diagrams or figures.
+            </li>
+            <li><strong>Indexes</strong> and tables of contents should not be annotated.
+            </li>
+        </ul>
+
+        <div class="columns is-desktop is-multiline" id="fig-8">
+            <div class="column is-half" id="fig-tabula-with-title">
+                <img src="./images/table_1.png" alt="Annotated table with its title">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(a)</strong> Example of an annotated table with a title.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-tabula-text">
+                <img src="./images/table_2.png" alt="Tables inserted into the running text">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(b)</strong> Example of tables inserted into the text.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-tabula-example">
+                <img src="./images/table_3.png" alt="Example of an annotated table">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(c)</strong> Example of a table.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-tabula-ornement">
+                <img src="./images/table_6.png" alt="Tables surrounded by ornamentation">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(d)</strong> Example of tables with ornaments.
+                </p>
+            </div>
+            <div class="column is-half" id="fig-tabula-initial">
+                <img src="./images/table_7.png" alt="Table containing an initial">
+                <p class="is-size-7 has-text-grey">
+                    <strong>(e)</strong> Example of a table with an initial.
+                </p>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-grey has-text-centered pb-3">
+            <strong>Figure 8.</strong> Examples of tables.
+        </p>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="rules.html" class="button">
+            <span class="mt-1"><i class="fas fa-arrow-left"></i></span>
+            <span class="txt pl-3">General rules</span>
+        </a>
+        <a href="index.html" class="button is-link">
+            <span class="txt pr-3">Back to Documentation</span>
+            <span class="mt-1"><i class="fas fa-home"></i></span>
+        </a>
+    </div>
+</div>
+
+<footer class="footer mt-6 pb-5 pt-5" data-theme="light">
+    <div class="columns is-centered" style="padding: 0 7vw">
+        <a class="column is-2" href="https://imagine-lab.enpc.fr/">
+            <figure class="image is-96x96 is-center p-4">
+                <img src="../static/logo/logo-ponts.png" alt="Laboratoire imagine - École des Ponts ParisTech logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://cordis.europa.eu/project/id/101076028">
+            <figure class="image is-128x128 is-center mt-2">
+                <img src="../static/logo/logo-erc.png" alt="European Research Council logo">
+            </figure>
+        </a>
+        <a class="column is-2"
+           href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/erc-des-ia-pour-faciliter-lanalyse-de-donnees-historiques-et-dimages-satellites">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-cnrs.png" alt="CNRS logo">
+            </figure>
+        </a>
+        <a class="column is-2" href="https://siteigm.univ-mlv.fr/">
+            <figure class="image is-96x96 is-center p-2">
+                <img src="../static/logo/logo-ligm.png" alt="Laboratoire Informatique Gaspard Monge logo">
+            </figure>
+        </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="column is-8 has-text-centered">
+            <b>Aikon</b> is supported by the ERC project DISCOVER, funded by the European Union's Horizon
+            Europe<br>Research and Innovation program under grant agreement No. 101076028.
+        </div>
+    </div>
+</footer>
+</body>
+</html>
