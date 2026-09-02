@@ -207,6 +207,10 @@ iframe {
     padding: 0.25rem 0;
 }
 
+.doc-section img {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .grey-box {
         width: 100%;
